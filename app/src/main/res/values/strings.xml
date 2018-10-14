@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Qual o Sabor</string>
+    <string name="txtUsuario">Usuário</string>
+    <string name="txtNewUsuario">Cadastrar Usuário</string>
+    <string name="cadastroEmpresa">Cadastrar Empresa</string>
+    <string name="razaoSocial">Razão Social</string>
+    <string name="cnpj">CNPJ</string>
+    <string name="btnBuscaEmpresa">Buscar Empresas</string>
+    <string name="nomeApp">Qual é o Sabor?</string>
+    <string name="empresa">EMPRESA</string>
+    <string name="cliente">CLIENTE</string>
+    <string name="login">Login</string>
+    <string name="senha">Senha</string>
+    <string name="entrar">ENTRAR</string>
+    <string name="registrar">REGISTRAR-SE</string>
+    <string name="nomeFantasia">Nome Fantasia</string>
+    <string name="cep">CEP</string>
+    <string name="uf">UF</string>
+    <string name="municipio">Município</string>
+    <string name="emai">E-mail</string>
+    <string name="avancar">AVANÇAR</string>
+    <string name="confirmacao">Digite o código de verificação  que você recebeu em seu e-mail:</string>
+    <string name="codigo">Código</string>
+    <string name="confirma">CONFIRMAR</string>
+</resources>

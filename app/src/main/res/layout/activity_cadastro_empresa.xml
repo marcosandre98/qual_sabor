@@ -37,7 +37,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:backgroundTint="@color/laranjaPizza"
-        android:onClick="avancar"
+        android:onClick="cadastroEmpresa"
         android:text="@string/avancar"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"

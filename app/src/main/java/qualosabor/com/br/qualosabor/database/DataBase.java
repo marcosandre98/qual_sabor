@@ -16,7 +16,7 @@ public class DataBase extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL(ScriptSQL.tabelaEmpresa());
+        sqLiteDatabase.execSQL(ScriptSQL.tabelas());
         Log.i("db", "Banco Criado com Sucesso");
 
     }

@@ -24,16 +24,23 @@ public class CadastroEmpresaDAO {
         //con a com feitoa na linha a cima pode inserir no banco
     }
 
-    public void insert(Empresa empresa){
+    public Boolean insert(Empresa empresa){
         ContentValues values = new ContentValues();
 
-        values.put("razao_social", empresa.getRazao_social() );
+        values.put("razao_social", empresa.getRazao_social());
+        values.put("nome_fantasia", empresa.getNome_fantasia());
         values.put("cnpj", empresa.getCnpj());
+        values.put("cep", empresa.getCep());
+        values.put("uf", empresa.getUf());
+        values.put("municipio", empresa.getMunicipio());
+
         try{
             conn.insertOrThrow("EMPRESA", null, values);
-            Log.i("igor", "Empresa " + empresa.getRazao_social() +" Inserida com sucesso!");
+            Log.i("teste", "Empresa " + empresa.getId() +" Inserida com sucesso!");
+            return true;
         }catch(SQLException erro){
-            Log.e("igor", "Erro " + erro.getMessage());
+            Log.e("teste", "Erro " + erro.getMessage());
+            return false;
         }
 
     }
@@ -47,11 +54,15 @@ public class CadastroEmpresaDAO {
             do{
                 Empresa emp = new Empresa();
                 emp.setId(cursor.getInt(0));
-                emp.setRazao_social(cursor.getString(1));
+                emp.setNome_fantasia(cursor.getString(1));
                 emp.setCnpj(cursor.getString(2));
+                emp.setRazao_social(cursor.getString(3));
+                emp.setCep(cursor.getString(4));
+                emp.setUf(cursor.getString(5));
+                emp.setMunicipio(cursor.getString(6));
 
                 adpEmpresas.add(emp);
-                Log.d("carr", cursor.getString(0) + " Razao " + cursor.getString(1));
+                Log.d("teste", cursor.getString(0) + " Nome Fantasia " + cursor.getString(1));
 
 
             } while(cursor.moveToNext());

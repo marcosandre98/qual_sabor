@@ -10,17 +10,18 @@
         android:layout_height="260dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="85dp"
+        android:layout_marginTop="126dp"
         android:src="@drawable/pizzanova" />
 
     <TextView
         android:id="@+id/splashText"
-        android:layout_below="@id/imgLogo"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="57dp"
+        android:layout_below="@id/imgLogo"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="102dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginBottom="141dp"
         android:gravity="center_horizontal"
         android:text="@string/nomeApp"
         android:textColor="#000"

@@ -4,37 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteY="81dp">
 
     <Button
         android:id="@+id/button"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginBottom="67dp"
         android:text="@string/cliente"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnEmpresa"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/btnEmpresa" />
 
     <Button
         android:id="@+id/btnEmpresa"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginBottom="8dp"
         android:onClick="mostrar"
         android:text="@string/empresa"
         android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
@@ -43,16 +35,18 @@
         android:id="@+id/imageView2"
         android:layout_width="275dp"
         android:layout_height="260dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginBottom="23dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginLeft="54dp"
+        android:layout_marginRight="48dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="50dp"
         android:contentDescription="TODO"
         app:layout_constraintBottom_toTopOf="@+id/btnEmpresa"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/food" />
+        app:layout_constraintVertical_bias="0.51"
+        app:srcCompat="@drawable/pizzanova" />
 </android.support.constraint.ConstraintLayout>

@@ -13,6 +13,7 @@ import qualosabor.com.br.qualosabor.database.DataBase;
 public class MainActivity extends AppCompatActivity {
 
     private Button btnEmpresa;
+    private Button btnUsuario;
 
     private DataBase dataBase;
     private SQLiteDatabase conn;
@@ -23,19 +24,26 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         btnEmpresa = (Button) findViewById(R.id.btnEmpresa);
+        btnUsuario = (Button) findViewById(R.id.btnUsuario);
 
         dataBase = new DataBase(this);
         conn = dataBase.getWritableDatabase();
 
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("Tela Principal");
+        actionBar.setTitle("Qual é o Sabor?");
 
 
 
     }
 
+
     public void mostrar(View view){
-        Intent abreLoginEmpresa = new Intent(this, LoginEmpresa.class);
-        startActivity(abreLoginEmpresa);
+        if(view.equals(btnEmpresa)) {
+            Intent abreLoginEmpresa = new Intent(this, LoginEmpresa.class);
+            startActivity(abreLoginEmpresa);
+        } if(view.equals(btnUsuario)) {
+            Intent abreLoginUsuario = new Intent(this, LoginUsuario.class);
+            startActivity(abreLoginUsuario);
+        }
     }
 }

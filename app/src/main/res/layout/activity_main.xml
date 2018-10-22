@@ -9,10 +9,11 @@
     tools:layout_editor_absoluteY="81dp">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnUsuario"
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_marginBottom="67dp"
+        android:onClick="mostrar"
         android:text="@string/cliente"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,7 +30,7 @@
         android:onClick="mostrar"
         android:text="@string/empresa"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/btnUsuario"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"

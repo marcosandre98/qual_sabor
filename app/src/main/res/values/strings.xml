@@ -22,4 +22,5 @@
     <string name="confirmacao">Digite o código de verificação  que você recebeu em seu e-mail:</string>
     <string name="codigo">Código</string>
     <string name="confirma">CONFIRMAR</string>
+    <string name="usuario">Usuário</string>
 </resources>

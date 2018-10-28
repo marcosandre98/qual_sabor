@@ -1,21 +1,16 @@
 package qualosabor.com.br.qualosabor;
 
 import android.content.Intent;
-import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
+import android.widget.Toast;
 
-import java.util.ArrayList;
-
-import qualosabor.com.br.qualosabor.adapter.EmpresaAdapter;
 import qualosabor.com.br.qualosabor.dominioCRUD.CadastroEmpresaDAO;
 import qualosabor.com.br.qualosabor.dominioCRUD.entidades.Empresa;
+
 
 public class CadastroEmpresa extends AppCompatActivity {
 
@@ -42,24 +37,28 @@ public class CadastroEmpresa extends AppCompatActivity {
         btnCadastrarEmpresa = (Button) findViewById(R.id.btnCadastrarEmpresa);
     }
 
-    public Empresa recuperaCampos() {
-        Empresa empresa = new Empresa();
-        empresa.setRazao_social(txtRazaoSocial.getText().toString());
-        empresa.setNome_fantasia(txtNomeFantasia.getText().toString());
-        empresa.setCnpj(txtCnpj.getText().toString());
-        empresa.setCep(txtCep.getText().toString());
-        empresa.setUf(txtUf.getText().toString());
-        empresa.setMunicipio(txtMunicipio.getText().toString());
-        return empresa;
-    }
+//    public Empresa recuperaCampos(Empresa) {
+//        Empresa empresa = new Empresa();
+//        empresa.setRazaoSocial(txtRazaoSocial.getText().toString());
+//        empresa.setNomeFantasia(txtNomeFantasia.getText().toString());
+//        empresa.setCnpj(txtCnpj.getText().toString());
+//        empresa.setCep(txtCep.getText().toString());
+//        empresa.setUf(txtUf.getText().toString());
+//        empresa.setMunicipio(txtMunicipio.getText().toString());
+//        return empresa;
+//    }
 
-    public void cadastroEmpresa (View view){ // View V serve para ação de CLICK
-        CadastroEmpresaDAO cadastroEmpresaDAO = new CadastroEmpresaDAO(this);
-        if (cadastroEmpresaDAO.insert(recuperaCampos())) {
+    public void cadastroEmpresa (View view) {
+        Empresa empresa = new Empresa(txtRazaoSocial.getText().toString(), txtNomeFantasia.getText().toString(), txtCnpj.getText().toString(),
+                txtCep.getText().toString(), txtUf.getText().toString(), txtMunicipio.getText().toString());
+
+        CadastroEmpresaDAO cadastroEmpresaDAO = new CadastroEmpresaDAO();
+        if (cadastroEmpresaDAO.insert(empresa)) {
+            Toast.makeText(this,"Empresa inserida com sucesso!", Toast.LENGTH_SHORT).show();
             this.avancar(view);
+        } else {
+            Toast.makeText(this,"Erro ao inserir a empresa!", Toast.LENGTH_SHORT).show();
         }
-      //  this.limparCampos();
-
     }
 
     public void buscaEmpresa(View view) {

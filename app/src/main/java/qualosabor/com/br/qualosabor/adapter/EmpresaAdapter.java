@@ -36,8 +36,8 @@ public class EmpresaAdapter extends ArrayAdapter<Empresa>{
         TextView txtCodigoEmpresa = (TextView) rowView.findViewById(R.id.txtCodigoEmpresa);
         TextView txtCnpjEmpresa = (TextView) rowView.findViewById(R.id.txtCnpjEmpresa);
 
-        txtNomeEmpresa.setText(elementos.get(position).getRazao_social());
-        txtCodigoEmpresa.setText(Integer.toString(elementos.get(position).getId()));
+        txtNomeEmpresa.setText(elementos.get(position).getRazaoSocial());
+//        txtCodigoEmpresa.setText(Integer.toString(elementos.get(position).getId()));
         txtCnpjEmpresa.setText(elementos.get(position).getCnpj());
 
         return rowView;

@@ -1,38 +1,44 @@
 package qualosabor.com.br.qualosabor.dominioCRUD.entidades;
 
-public class Empresa {
+import com.orm.SugarRecord;
 
-    private int id;
-    private String razao_social;
-    private String nome_fantasia;
+public class Empresa extends SugarRecord {
+
+    private String razaoSocial;
+    private String nomeFantasia;
     private String cnpj;
     private String cep;
     private String uf;
     private String municipio;
 
 
-    public int getId() {
-        return id;
+    public Empresa (String razaoSocial, String nomeFantasia, String cnpj, String cep, String uf, String municipio) {
+        this.setRazaoSocial(razaoSocial);
+        this.setNomeFantasia(nomeFantasia);
+        this.setCnpj(cnpj);
+        this.setCep(cep);
+        this.setUf(uf);
+        this.setMunicipio(municipio);
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public Empresa () {
+
     }
 
-    public String getRazao_social() {
-        return razao_social;
+    public String getRazaoSocial() {
+        return razaoSocial;
     }
 
-    public void setRazao_social(String razao_social) {
-        this.razao_social = razao_social;
+    public void setRazaoSocial(String razaoSocial) {
+        this.razaoSocial = razaoSocial;
     }
 
-    public String getNome_fantasia() {
-        return nome_fantasia;
+    public String getNomeFantasia() {
+        return nomeFantasia;
     }
 
-    public void setNome_fantasia(String nome_fantasia) {
-        this.nome_fantasia = nome_fantasia;
+    public void setNomeFantasia(String nomeFantasia) {
+        this.nomeFantasia = nomeFantasia;
     }
 
     public String getCnpj() {

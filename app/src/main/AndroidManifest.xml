@@ -7,12 +7,19 @@
     <uses-feature android:name="android.hardware.camera" />
 
     <application
+        android:name="com.orm.SugarApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_new"
         android:label="Qual é o Sabor?"
         android:roundIcon="@mipmap/ic_launcher_round_new"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <meta-data android:name="DATABASE" android:value="qualsabor.db" />
+        <meta-data android:name="VERSION" android:value="1" />
+        <meta-data android:name="QUERY_LOG" android:value="true" />
+        <meta-data android:name="DOMAIN_PACKAGE_NAME" android:value="qualosabor.com.br.qualosabor" />
+
         <activity
             android:name=".SplashScreenActivity"
             android:theme="@style/AppCompat.TelaCheia">

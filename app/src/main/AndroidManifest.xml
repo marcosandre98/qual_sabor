@@ -3,6 +3,7 @@
     package="qualosabor.com.br.qualosabor">
 
     <uses-permission android:name="android.permission.CAMERA" />
+
     <uses-feature android:name="android.hardware.camera" />
 
     <application
@@ -30,7 +31,13 @@
             android:name=".LoginEmpresa"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".ConfirmaCadastro" />
-        <activity android:name=".LoginUsuario"></activity>
+        <activity android:name=".LoginUsuario" />
+        <activity android:name=".NomeUsuario" />
+        <activity android:name=".EscolherSabores" />
+        <activity android:name=".ConfirmacaoPedido" />
+        <activity android:name=".MenuEmpresa" />
+        <activity android:name=".CadastrarSabores" />
+        <activity android:name=".ListarSabores"></activity>
     </application>
 
 </manifest>

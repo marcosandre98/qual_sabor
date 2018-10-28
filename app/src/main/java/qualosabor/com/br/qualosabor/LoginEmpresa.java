@@ -29,9 +29,14 @@ public class LoginEmpresa extends AppCompatActivity {
         actionBar.setTitle("Login Empresa");
     }
 
-    public void abrir(View view){
+    public void abrirCadastro(View view){
         Intent abreCadEmpresa = new Intent(this, CadastroEmpresa.class);
         startActivity(abreCadEmpresa);
+    }
+
+    public void abrirEmpresa(View view){
+        Intent abreMenuEmpresa = new Intent(this, MenuEmpresa.class);
+        startActivity(abreMenuEmpresa);
     }
 
 }

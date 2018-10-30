@@ -23,11 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Qual é o Sabor?");
-
-
-
     }
-
 
     public void mostrar(View view){
         if(view.equals(btnEmpresa)) {

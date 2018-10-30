@@ -14,11 +14,18 @@
         android:roundIcon="@mipmap/ic_launcher_round_new"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <meta-data android:name="DATABASE" android:value="qualsabor.db" />
-        <meta-data android:name="VERSION" android:value="1" />
-        <meta-data android:name="QUERY_LOG" android:value="true" />
-        <meta-data android:name="DOMAIN_PACKAGE_NAME" android:value="qualosabor.com.br.qualosabor" />
+        <meta-data
+            android:name="DATABASE"
+            android:value="qualsabor.db" />
+        <meta-data
+            android:name="VERSION"
+            android:value="1" />
+        <meta-data
+            android:name="QUERY_LOG"
+            android:value="true" />
+        <meta-data
+            android:name="DOMAIN_PACKAGE_NAME"
+            android:value="qualosabor.com.br.qualosabor" />
 
         <activity
             android:name=".SplashScreenActivity"
@@ -37,14 +44,18 @@
         <activity
             android:name=".LoginEmpresa"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".ConfirmaCadastro" />
         <activity android:name=".LoginUsuario" />
         <activity android:name=".NomeUsuario" />
         <activity android:name=".EscolherSabores" />
         <activity android:name=".ConfirmacaoPedido" />
         <activity android:name=".MenuEmpresa" />
         <activity android:name=".CadastrarSabores" />
-        <activity android:name=".ListarSabores"></activity>
+        <activity android:name=".ListarSabores" />
+        <activity
+            android:name=".ConfirmaCadastro"
+            android:label="@string/title_activity_confirma_cadastro"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".CadastroUsuario"></activity>
     </application>
 
 </manifest>

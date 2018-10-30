@@ -13,8 +13,8 @@ public class ConfirmaCadastro extends AppCompatActivity {
         setContentView(R.layout.activity_confirma_cadastro);
     }
 
-    public void avancar(View view) {
-        Intent abreLoginEmpresa = new Intent(this, LoginEmpresa.class);
-        startActivity(abreLoginEmpresa);
+    public void avancar(View view){
+        Intent abreCadastroUsuario = new Intent(this, CadastroUsuario.class);
+        startActivity(abreCadastroUsuario);
     }
 }

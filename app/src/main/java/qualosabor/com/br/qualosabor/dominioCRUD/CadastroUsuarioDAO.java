@@ -7,7 +7,7 @@ import qualosabor.com.br.qualosabor.dominioCRUD.entidades.Usuario;
 
 public class CadastroUsuarioDAO {
 
-    public Boolean insert(Usuario usuario) {
+ /*   public Boolean insert(Usuario usuario) {
         try {
             usuario.save();
             Log.i("teste", "Usuário" + usuario.getId() + " Inserido com sucesso!");
@@ -17,5 +17,5 @@ public class CadastroUsuarioDAO {
             return false;
         }
 
-    }
+    }*/
 }

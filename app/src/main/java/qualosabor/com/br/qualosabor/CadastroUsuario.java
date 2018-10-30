@@ -25,29 +25,29 @@ public class CadastroUsuario extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cadastro_usuario_empresa);
+        setContentView(R.layout.activity_cadastro_usuario);
 
-        txtUsuarioLogin = (EditText) CadastroUsuario.this.findViewById(R.id.txtUsuarioLogin);
-        txtSenha = (EditText) CadastroUsuario.this.findViewById(R.id.txtSenha);
-        txtIdEmpresa = (EditText) CadastroUsuario.this.findViewById(R.id.txtIdEmpresa);
-        btnCadastrarUsuario = (Button) findViewById(R.id.btnCadastrarUsuario);
+        //txtUsuarioLogin = (EditText) CadastroUsuario.this.findViewById(R.id.txtUsuarioLogin);
+        //txtSenha = (EditText) CadastroUsuario.this.findViewById(R.id.txtSenha);
+        //txtIdEmpresa = (EditText) CadastroUsuario.this.findViewById(R.id.txtIdEmpresa);
+        //btnCadastrarUsuario = (Button) findViewById(R.id.btnCadastrarUsuario);
     }
 
     public void cadastroUsuario (View view) {
-        Usuario usuario = new Usuario(txtUsuarioLogin.getText().toString(), txtSenha.getText().toString(), Integer.parseInt(txtIdEmpresa.getText().toString()));
+        //Usuario usuario = new Usuario(txtUsuarioLogin.getText().toString(), txtSenha.getText().toString(), Integer.parseInt(txtIdEmpresa.getText().toString()));
 
-        CadastroUsuarioDAO cadastroUsuarioDAO = new CadastroUsuarioDAO();
-        if (cadastroUsuarioDAO.insert(usuario)) {
-            Toast.makeText(this,"Usuário inserido com sucesso!", Toast.LENGTH_SHORT).show();
-            this.avancar(view);
-        } else {
-            Toast.makeText(this,"Erro ao inserir usuário!", Toast.LENGTH_SHORT).show();
-        }
+        //CadastroUsuarioDAO cadastroUsuarioDAO = new CadastroUsuarioDAO();
+        //if (cadastroUsuarioDAO.insert(usuario)) {
+        // Toast.makeText(this,"Usuário inserido com sucesso!", Toast.LENGTH_SHORT).show();
+        this.avancar(view);
+        //} else {
+        // Toast.makeText(this,"Erro ao inserir usuário!", Toast.LENGTH_SHORT).show();
+        // }
     }
 
     public void avancar(View view){
-        Intent abreMenuEmpresa = new Intent(this, MenuEmpresa.class);
-        startActivity(abreMenuEmpresa);
+        Intent abreLoginEmpresa = new Intent(this, LoginEmpresa.class);
+        startActivity(abreLoginEmpresa);
     }
 
 }

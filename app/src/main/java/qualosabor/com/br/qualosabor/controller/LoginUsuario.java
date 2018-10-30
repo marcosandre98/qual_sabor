@@ -7,6 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast; // Não remover, é para retornar as mensagens do leitor
+import com.google.zxing.integration.android.IntentIntegrator; // Não remover, é utilizado para ler o QR CODE
+import com.google.zxing.integration.android.IntentResult; // Não remover, é utilizado para ler o QR CODE
 
 import qualosabor.com.br.qualosabor.R;
 
@@ -23,37 +26,37 @@ public class LoginUsuario extends AppCompatActivity {
         imgBtnCamera = (ImageButton) LoginUsuario.this.findViewById(R.id.imgBtnCamera);
 
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("Login Usuário");
+        actionBar.setTitle("Identificação de usuário");
 
         final Activity activity = this;
 
         imgBtnCamera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                IntentIntegrator integrator = new IntentIntegrator(activity);
-  //              integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE_TYPES);
-    //            integrator.setPrompt("Scan");
-     //           integrator.setCameraId(0);
-     //           integrator.setBeepEnabled(false);
-       //         integrator.setBarcodeImageEnabled(false);
-        //        integrator.initiateScan();
+                IntentIntegrator integrator = new IntentIntegrator(activity);
+                integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE_TYPES);
+                integrator.setPrompt("Scan");
+                integrator.setCameraId(0);
+                integrator.setBeepEnabled(false);
+                integrator.setBarcodeImageEnabled(false);
+                integrator.initiateScan();
             }
         });
         }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        //IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
-//        if(result != null){
-//            if(result.getContents()== null){
-//                Toast.makeText(this, "Você cancelou a leitura!", Toast.LENGTH_LONG).show();
-//            } else {
-//                Toast.makeText(this, result.getContents(), Toast.LENGTH_LONG).show();
-//                Intent abreNomeUsuario = new Intent(this, NomeUsuario.class);
-//                startActivity(abreNomeUsuario);
-//            }
-//        } else {
-//            super.onActivityResult(requestCode, resultCode, data);
-//        }
+        IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+        if(result != null){
+            if(result.getContents()== null){
+                Toast.makeText(this, "Você cancelou a leitura!", Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(this, result.getContents(), Toast.LENGTH_LONG).show();
+                Intent abreNomeUsuario = new Intent(this, NomeUsuario.class);
+                startActivity(abreNomeUsuario);
+            }
+        } else {
+            super.onActivityResult(requestCode, resultCode, data);
+        }
     }
 }

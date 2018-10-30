@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import qualosabor.com.br.qualosabor.controller.LoginEmpresa;
+import qualosabor.com.br.qualosabor.controller.LoginUsuario;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
             Intent abreLoginEmpresa = new Intent(this, LoginEmpresa.class);
             startActivity(abreLoginEmpresa);
         } if(view.equals(btnUsuario)) {
-//            Intent abreLoginUsuario = new Intent(this, LoginUsuario.class);
-//            startActivity(abreLoginUsuario);
+            Intent abreLoginUsuario = new Intent(this, LoginUsuario.class);
+            startActivity(abreLoginUsuario);
         }
     }
 }

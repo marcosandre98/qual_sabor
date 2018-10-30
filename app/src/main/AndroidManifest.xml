@@ -37,25 +37,25 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".CadastroEmpresa"
-            android:parentActivityName=".LoginEmpresa" />
-        <activity android:name=".ListarEmpresas" />
+            android:name=".controller.CadastroEmpresa"
+            android:parentActivityName=".controller.LoginEmpresa" />
+        <activity android:name=".controller.ListarEmpresas" />
         <activity android:name=".MainActivity" />
         <activity
-            android:name=".LoginEmpresa"
+            android:name=".controller.LoginEmpresa"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".LoginUsuario" />
-        <activity android:name=".NomeUsuario" />
-        <activity android:name=".EscolherSabores" />
-        <activity android:name=".ConfirmacaoPedido" />
-        <activity android:name=".MenuEmpresa" />
+        <activity android:name=".controller.LoginUsuario" />
+        <activity android:name=".controller.NomeUsuario" />
+        <activity android:name=".controller.EscolherSabores" />
+        <activity android:name=".controller.ConfirmacaoPedido" />
+        <activity android:name=".controller.MenuEmpresa" />
         <activity android:name=".CadastrarSabores" />
-        <activity android:name=".ListarSabores" />
+        <activity android:name=".controller.ListarSabores" />
         <activity
-            android:name=".ConfirmaCadastro"
+            android:name=".controller.ConfirmaCadastro"
             android:label="@string/title_activity_confirma_cadastro"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".CadastroUsuario"></activity>
+        <activity android:name=".controller.CadastroUsuario"></activity>
     </application>
 
 </manifest>

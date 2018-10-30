@@ -1,8 +1,10 @@
-package qualosabor.com.br.qualosabor.dominioCRUD.entidades;
+package qualosabor.com.br.qualosabor.models;
+
+import com.orm.SugarRecord;
 
 import java.sql.Blob;
 
-public class Cliente {
+public class Cliente extends SugarRecord {
 
     private String nomeCliente;
     private Integer idEmpresa;

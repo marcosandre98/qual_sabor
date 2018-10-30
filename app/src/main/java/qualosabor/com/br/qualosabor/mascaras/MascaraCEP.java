@@ -1,4 +1,4 @@
-package qualosabor.com.br.qualosabor;
+package qualosabor.com.br.qualosabor.mascaras;
 
 import android.content.Context;
 import android.support.v7.widget.AppCompatEditText;

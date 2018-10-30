@@ -1,10 +1,8 @@
-package qualosabor.com.br.qualosabor.dominioCRUD;
+package qualosabor.com.br.qualosabor.dao;
 
-import android.content.ContentValues;
 import android.util.Log;
-import android.widget.Toast;
 
-import qualosabor.com.br.qualosabor.dominioCRUD.entidades.Empresa;
+import qualosabor.com.br.qualosabor.models.Empresa;
 
 //
 //        import android.content.ContentValues;
@@ -17,8 +15,6 @@ import qualosabor.com.br.qualosabor.dominioCRUD.entidades.Empresa;
 //        import java.lang.reflect.Array;
 //        import java.util.ArrayList;
 //
-//        import qualosabor.com.br.qualosabor.database.DataBase;
-//        import qualosabor.com.br.qualosabor.dominioCRUD.entidades.Empresa;
 //
 public class CadastroEmpresaDAO {
 

@@ -12,7 +12,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import qualosabor.com.br.qualosabor.R;
-import qualosabor.com.br.qualosabor.dominioCRUD.entidades.Empresa;
+import qualosabor.com.br.qualosabor.models.Empresa;
 
 public class EmpresaAdapter extends ArrayAdapter<Empresa>{
 

@@ -1,6 +1,8 @@
-package qualosabor.com.br.qualosabor.dominioCRUD.entidades;
+package qualosabor.com.br.qualosabor.models;
 
-public class Pedido {
+import com.orm.SugarRecord;
+
+public class Pedido extends SugarRecord {
 
     private Integer numeroMesa;
     private Integer idSabor;

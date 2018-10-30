@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ConfirmacaoPedido">
+    tools:context=".controller.ConfirmacaoPedido">
 
     <TextView
         android:id="@+id/txtPedidoConfir"

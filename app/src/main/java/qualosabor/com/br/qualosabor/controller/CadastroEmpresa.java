@@ -1,4 +1,4 @@
-package qualosabor.com.br.qualosabor;
+package qualosabor.com.br.qualosabor.controller;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,8 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import qualosabor.com.br.qualosabor.dominioCRUD.CadastroEmpresaDAO;
-import qualosabor.com.br.qualosabor.dominioCRUD.entidades.Empresa;
+import qualosabor.com.br.qualosabor.R;
+import qualosabor.com.br.qualosabor.dao.CadastroEmpresaDAO;
+import qualosabor.com.br.qualosabor.models.Empresa;
 
 
 public class CadastroEmpresa extends AppCompatActivity {

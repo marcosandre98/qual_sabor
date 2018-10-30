@@ -1,4 +1,4 @@
-package qualosabor.com.br.qualosabor.dominioCRUD.entidades;
+package qualosabor.com.br.qualosabor.models;
 
 import com.orm.SugarRecord;
 

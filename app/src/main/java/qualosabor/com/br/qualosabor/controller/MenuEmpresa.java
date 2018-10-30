@@ -1,9 +1,11 @@
-package qualosabor.com.br.qualosabor;
+package qualosabor.com.br.qualosabor.controller;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+
+import qualosabor.com.br.qualosabor.R;
 
 public class MenuEmpresa extends AppCompatActivity {
 
@@ -14,7 +16,7 @@ public class MenuEmpresa extends AppCompatActivity {
     }
 
     public void avancarCadastrar(View view){
-        Intent abreConfirmacaoEmpresa = new Intent(this, CadastrarSabores.class);
+        Intent abreConfirmacaoEmpresa = new Intent(this, CadastroSabor.class);
         startActivity(abreConfirmacaoEmpresa);
     }
 

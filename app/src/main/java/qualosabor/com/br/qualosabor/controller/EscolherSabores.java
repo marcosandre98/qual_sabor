@@ -1,4 +1,4 @@
-package qualosabor.com.br.qualosabor;
+package qualosabor.com.br.qualosabor.controller;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,8 +8,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import java.util.ArrayList;
 
+import qualosabor.com.br.qualosabor.R;
 import qualosabor.com.br.qualosabor.adapter.EmpresaAdapter;
-import qualosabor.com.br.qualosabor.dominioCRUD.entidades.Empresa;
+import qualosabor.com.br.qualosabor.models.Empresa;
 
 public class EscolherSabores extends AppCompatActivity {
 

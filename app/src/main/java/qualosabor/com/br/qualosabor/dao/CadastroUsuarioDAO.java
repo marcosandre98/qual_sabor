@@ -1,9 +1,4 @@
-package qualosabor.com.br.qualosabor.dominioCRUD;
-
-import android.util.Log;
-
-import qualosabor.com.br.qualosabor.dominioCRUD.entidades.Empresa;
-import qualosabor.com.br.qualosabor.dominioCRUD.entidades.Usuario;
+package qualosabor.com.br.qualosabor.dao;
 
 public class CadastroUsuarioDAO {
 

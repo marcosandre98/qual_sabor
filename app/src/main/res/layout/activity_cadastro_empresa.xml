@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CadastroEmpresa">
+    tools:context=".controller.CadastroEmpresa">
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/lblRazaoSocial"
@@ -78,7 +78,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblNomeFantasia">
 
-        <qualosabor.com.br.qualosabor.MascaraCNPJ
+        <qualosabor.com.br.qualosabor.mascaras.MascaraCNPJ
             android:id="@+id/txtCnpj"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -97,7 +97,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblCnpj">
 
-        <qualosabor.com.br.qualosabor.MascaraCEP
+        <qualosabor.com.br.qualosabor.mascaras.MascaraCEP
             android:id="@+id/txtCep"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

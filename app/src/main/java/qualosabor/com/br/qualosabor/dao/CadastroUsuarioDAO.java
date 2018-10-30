@@ -1,8 +1,12 @@
 package qualosabor.com.br.qualosabor.dao;
 
+import android.util.Log;
+
+import qualosabor.com.br.qualosabor.models.Usuario;
+
 public class CadastroUsuarioDAO {
 
- /*   public Boolean insert(Usuario usuario) {
+    public Boolean insert(Usuario usuario) {
         try {
             usuario.save();
             Log.i("teste", "Usuário" + usuario.getId() + " Inserido com sucesso!");
@@ -12,5 +16,5 @@ public class CadastroUsuarioDAO {
             return false;
         }
 
-    }*/
+    }
 }

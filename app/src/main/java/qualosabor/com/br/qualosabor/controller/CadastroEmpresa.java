@@ -23,6 +23,7 @@ public class CadastroEmpresa extends AppCompatActivity {
     private EditText txtMunicipio;
     private Button btnCadastrarEmpresa;
 
+    public Long idEmpresa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +57,7 @@ public class CadastroEmpresa extends AppCompatActivity {
         CadastroEmpresaDAO cadastroEmpresaDAO = new CadastroEmpresaDAO();
         if (cadastroEmpresaDAO.insert(empresa)) {
             Toast.makeText(this,"Empresa inserida com sucesso!", Toast.LENGTH_SHORT).show();
+            this.idEmpresa = empresa.getId();
             this.avancar(view);
         } else {
             Toast.makeText(this,"Erro ao inserir a empresa!", Toast.LENGTH_SHORT).show();

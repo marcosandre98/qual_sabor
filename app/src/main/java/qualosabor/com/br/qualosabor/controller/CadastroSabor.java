@@ -16,7 +16,7 @@ public class CadastroSabor extends AppCompatActivity {
     }
 
     public void cadastroSabor (View view){ // View V serve para ação de CLICK
-            this.voltar(view);
+        this.voltar(view);
     }
 
     public void voltar(View view){

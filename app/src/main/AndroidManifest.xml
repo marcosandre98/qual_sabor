@@ -55,7 +55,8 @@
             android:name=".controller.ConfirmaCadastro"
             android:label="@string/title_activity_confirma_cadastro"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".controller.CadastroUsuario"></activity>
+        <activity android:name=".controller.CadastroUsuario" />
+        <activity android:name=".controller.CadastroSabor"></activity>
     </application>
 
 </manifest>

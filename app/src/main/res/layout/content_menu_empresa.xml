@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".controller.MenuEmpresa"
+    tools:showIn="@layout/app_bar_menu_empresa">
+
+    <TextView
+        android:id="@+id/txtPedidoConfir"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="163dp"
+        android:layout_marginLeft="163dp"
+        android:layout_marginRight="163dp"
+        android:layout_marginStart="163dp"
+        android:layout_marginTop="48dp"
+        android:textSize="18dp"
+        android:text="AQUI VAI UMA TABELA COM OS PEDIDOS DOS CLIENTES"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtPedid"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="163dp"
+        android:layout_marginLeft="163dp"
+        android:layout_marginRight="163dp"
+        android:layout_marginStart="163dp"
+        android:layout_marginTop="150dp"
+        android:textSize="18dp"
+        android:text="AQUI VAI UMA TABELA COM OS SABORES MAIS PEDIDOS"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtPe"
+        android:layout_width="300dp"
+        android:layout_height="130dp"
+        android:layout_marginEnd="163dp"
+        android:layout_marginLeft="163dp"
+        android:layout_marginRight="163dp"
+        android:layout_marginStart="163dp"
+        android:layout_marginTop="250dp"
+        android:textSize="18dp"
+        android:text="AQUI VAI UM MENU LATERAL NA ESQUERDA PARA ACESSAR OS SABORES E CONFIG DA EMPRESA, MAS VOU COLOCAR UNS BOTOES
+FIXOS POR ENQUANTO, SÓ PARA NAVEGAR"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnCadastrarSabores"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginLeft="148dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="148dp"
+        android:layout_marginRight="148dp"
+        android:background="@drawable/button_background_orange"
+        android:onClick="avancarCadastrar"
+        android:text="CADASTRAR SABORES"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPe" />
+
+    <Button
+        android:id="@+id/btnListarSabores"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginLeft="148dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="148dp"
+        android:layout_marginRight="148dp"
+        android:background="@drawable/button_background_orange"
+        android:onClick="avancarListar"
+        android:text="LISTAR SABORES"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCadastrarSabores" />
+
+</android.support.constraint.ConstraintLayout>

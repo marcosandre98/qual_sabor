@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="qualosabor.com.br.qualosabor">
 
     <uses-permission android:name="android.permission.CAMERA" />
@@ -48,15 +49,20 @@
         <activity android:name=".controller.NomeUsuario" />
         <activity android:name=".controller.EscolherSabores" />
         <activity android:name=".controller.ConfirmacaoPedido" />
-        <activity android:name=".controller.MenuEmpresa" />
-        <activity android:name=".CadastrarSabores" />
+       <!-- <activity android:name=".controller.MenuEmpresa" /> ->>
+       <!- <activity android:name=".CadastrarSabores" /> -->
         <activity android:name=".controller.ListarSabores" />
         <activity
             android:name=".controller.ConfirmaCadastro"
             android:label="@string/title_activity_confirma_cadastro"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".controller.CadastroUsuario" />
-        <activity android:name=".controller.CadastroSabor"></activity>
+        <activity android:name=".controller.CadastroSabor" />
+        <activity
+            android:name=".controller.MenuEmpresa"
+            android:label="@string/title_activity_menu_empresa"
+            android:theme="@style/AppTheme.NoActionBar"
+            tools:ignore="DuplicateActivity"></activity>
     </application>
 
 </manifest>

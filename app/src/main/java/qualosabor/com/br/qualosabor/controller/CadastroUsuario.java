@@ -28,27 +28,26 @@ public class CadastroUsuario extends AppCompatActivity {
 
         txtUsuarioLogin = (EditText) CadastroUsuario.this.findViewById(R.id.txtUsuarioLogin);
         txtSenha = (EditText) CadastroUsuario.this.findViewById(R.id.txtSenha);
-//        txtIdEmpresa = (EditText) CadastroUsuario.this.findViewById(R.id.txtIdEmpresa);
+        //txtIdEmpresa = (EditText) CadastroUsuario.this.findViewById(R.id.txtIdEmpresa);
         btnCadastrarUsuario = (Button) findViewById(R.id.btnCadastrarUsuario);
     }
 
-    public void cadastroUsuario (View view) {
+    public void cadastroUsuario(View view) {
         CadastroEmpresa c = new CadastroEmpresa();
-
-//        Usuario usuario = new Usuario(txtUsuarioLogin.getText().toString(), txtSenha.getText().toString(), ));
-//        Log.i("teste", "Usuário" + c.idEmpresa + " Inserido com sucesso!");
-//        CadastroUsuarioDAO cadastroUsuarioDAO = new CadastroUsuarioDAO();
-//        if (cadastroUsuarioDAO.insert(usuario)) {
-//            Toast.makeText(this,"Usuário inserido com sucesso!", Toast.LENGTH_SHORT).show();
+        Usuario usuario = new Usuario(txtUsuarioLogin.getText().toString(), txtSenha.getText().toString(), 1);
+        Log.i("teste", "Usuário" + c.idEmpresa + " Inserido com sucesso!");
+        CadastroUsuarioDAO cadastroUsuarioDAO = new CadastroUsuarioDAO();
+        if (cadastroUsuarioDAO.insert(usuario)) {
+            Toast.makeText(this, "Usuário inserido com sucesso!", Toast.LENGTH_SHORT).show();
             this.avancar(view);
-//        } else {
-//            Toast.makeText(this,"Erro ao inserir usuário!", Toast.LENGTH_SHORT).show();
-//         }
+        } else {
+            Toast.makeText(this, "Erro ao inserir usuário!", Toast.LENGTH_SHORT).show();
+        }
     }
 
-    public void avancar(View view){
-        Intent abreMenuEmpresa = new Intent(this, MenuEmpresa.class);
-        startActivity(abreMenuEmpresa);
+    public void avancar(View view) {
+        Intent abreLoginEmpresa = new Intent(this, LoginEmpresa.class);
+        startActivity(abreLoginEmpresa);
     }
 
 }

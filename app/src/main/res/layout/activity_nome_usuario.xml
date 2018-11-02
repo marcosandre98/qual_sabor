@@ -8,15 +8,16 @@
 
         <TextView
             android:id="@+id/txtNomeUsu"
-            android:layout_width="200dp"
+            android:layout_width="310dp"
             android:layout_height="40dp"
             android:layout_marginEnd="163dp"
             android:layout_marginLeft="163dp"
             android:layout_marginRight="163dp"
             android:layout_marginStart="163dp"
             android:layout_marginTop="48dp"
-            android:textSize="14dp"
-            android:text="Código scaneado com sucesso! Por favor, insira seu nome:"
+            android:textSize="15dp"
+            android:text="Código scaneado com sucesso na Mesa 120!
+                  Por favor, insira seu nome:"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -51,7 +52,7 @@
             android:layout_marginEnd="148dp"
             android:layout_marginRight="148dp"
             android:background="@drawable/button_background_orange"
-            android:onClick="avancar"
+            android:onClick="cadastroCliente"
             android:text="@string/confirma"
             android:textColor="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"

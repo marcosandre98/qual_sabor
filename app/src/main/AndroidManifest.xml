@@ -49,7 +49,6 @@
         <activity android:name=".controller.NomeUsuario" />
         <activity android:name=".controller.EscolherSabores" />
         <activity android:name=".controller.ConfirmacaoPedido" />
-        <activity android:name=".controller.MenuEmpresa" />
        <!-- <activity android:name=".controller.MenuEmpresa" /> ->>
        <!- <activity android:name=".CadastrarSabores" /> -->
         <activity android:name=".controller.ListarSabores" />

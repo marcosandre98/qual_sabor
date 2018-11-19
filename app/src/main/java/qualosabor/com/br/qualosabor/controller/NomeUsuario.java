@@ -34,14 +34,15 @@ public class NomeUsuario extends AppCompatActivity {
         CadastroClienteDAO cadastroClienteDAO = new CadastroClienteDAO();
         if (cadastroClienteDAO.insert(cliente)) {
             Toast.makeText(this, "Cliente cadastrado com sucesso!", Toast.LENGTH_SHORT).show();
-            this.avancar(view);
+            this.avancar(view,txtNomeCliente.getText().toString());
         }else{
-            Toast.makeText(this, "Erro ao inserir sabor!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Erro ao cadastrar o cliente!", Toast.LENGTH_SHORT).show();
         }
     }
 
-    public void avancar(View view){
+    public void avancar(View view, String nomeCli){
         Intent abreSabores = new Intent(this, EscolherSabores.class);
+        abreSabores.putExtra("NomeCliente", nomeCli);
         startActivity(abreSabores);
     }
 }

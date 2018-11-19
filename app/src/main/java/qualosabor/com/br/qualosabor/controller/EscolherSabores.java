@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
+
 import java.util.ArrayList;
 
 import qualosabor.com.br.qualosabor.R;
@@ -24,6 +26,10 @@ public class EscolherSabores extends AppCompatActivity {
         setContentView(R.layout.activity_escolher_sabores);
 
         listaSabores = (ListView) findViewById(R.id.listSabores);
+
+        Intent it = getIntent();
+        String cliente = it.getStringExtra("NomeCliente");
+        Toast.makeText(this, cliente, Toast.LENGTH_LONG).show();
 
         this.buscaSabor();
     }

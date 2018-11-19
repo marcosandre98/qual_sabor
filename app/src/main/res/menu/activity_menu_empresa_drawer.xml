@@ -6,12 +6,12 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/cad_sabor"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_add_box_black_24dp"
             android:title="Cadastrar Sabor" />
         <item
             android:id="@+id/list_sabor"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Listar Sabor" />
+            android:icon="@drawable/ic_list_black_24dp"
+            android:title="Listar Sabores" />
         <item
             android:id="@+id/config_empresa"
             android:icon="@drawable/ic_menu_manage"

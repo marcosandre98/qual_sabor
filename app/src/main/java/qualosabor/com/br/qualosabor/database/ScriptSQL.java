@@ -35,6 +35,7 @@
 //        createSql.append("CREATE TABLE PEDIDOS ( ");
 //        createSql.append("id INTEGER PRIMARY KEY AUTOINCREMENT, ");
 //        createSql.append("mesa VARCHAR (100) NOT NULL, ");
+//        createSql.append("situacao SMALLINT NOT NULL );");
 //        createSql.append("id_sabor INTEGER NOT NULL, ");
 //        createSql.append("id_cliente INTEGER NOT NULL, ");
 //        createSql.append("id_empresa INTEGER NOT NULL );");

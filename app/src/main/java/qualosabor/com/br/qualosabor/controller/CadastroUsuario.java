@@ -32,9 +32,9 @@ public class CadastroUsuario extends AppCompatActivity {
         btnCadastrarUsuario = (Button) findViewById(R.id.btnCadastrarUsuario);
     }
 
-    public void cadastroUsuario(View view) {
+    public void cadastrarUsuario(View view) {
         CadastroEmpresa c = new CadastroEmpresa();
-        Usuario usuario = new Usuario(txtUsuarioLogin.getText().toString(), txtSenha.getText().toString(), "", 1);
+        Usuario usuario = new Usuario(txtUsuarioLogin.getText().toString(), txtSenha.getText().toString(),1);
         Log.i("teste", "Usuário" + c.idEmpresa + " Inserido com sucesso!");
         CadastroUsuarioDAO cadastroUsuarioDAO = new CadastroUsuarioDAO();
         if (cadastroUsuarioDAO.insert(usuario)) {

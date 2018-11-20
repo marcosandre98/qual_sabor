@@ -10,15 +10,17 @@ public class Empresa extends SugarRecord {
     private String cep;
     private String uf;
     private String municipio;
+    private String email;
 
 
-    public Empresa (String razaoSocial, String nomeFantasia, String cnpj, String cep, String uf, String municipio) {
+    public Empresa (String razaoSocial, String nomeFantasia, String cnpj, String cep, String uf, String municipio, String email) {
         this.setRazaoSocial(razaoSocial);
         this.setNomeFantasia(nomeFantasia);
         this.setCnpj(cnpj);
         this.setCep(cep);
         this.setUf(uf);
         this.setMunicipio(municipio);
+        this.setEmail(email);
     }
 
     public Empresa () {
@@ -73,4 +75,11 @@ public class Empresa extends SugarRecord {
         this.municipio = municipio;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }

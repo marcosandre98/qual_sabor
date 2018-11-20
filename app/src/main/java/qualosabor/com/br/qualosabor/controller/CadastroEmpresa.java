@@ -21,6 +21,7 @@ public class CadastroEmpresa extends AppCompatActivity {
     private EditText txtCep;
     private EditText txtUf;
     private EditText txtMunicipio;
+    private EditText txtEmail;
     private Button btnCadastrarEmpresa;
 
     public Long idEmpresa;
@@ -36,6 +37,7 @@ public class CadastroEmpresa extends AppCompatActivity {
         txtCep = (EditText) CadastroEmpresa.this.findViewById(R.id.txtCep);
         txtUf = (EditText) CadastroEmpresa.this.findViewById(R.id.txtUf);
         txtMunicipio = (EditText) CadastroEmpresa.this.findViewById(R.id.txtMunicipio);
+        txtEmail = (EditText) CadastroEmpresa.this.findViewById(R.id.txtEmail);
         btnCadastrarEmpresa = (Button) findViewById(R.id.btnCadastrarEmpresa);
     }
 
@@ -50,9 +52,9 @@ public class CadastroEmpresa extends AppCompatActivity {
 //        return empresa;
 //    }
 
-    public void cadastroEmpresa (View view) {
+    public void cadastrarEmpresa(View view) {
         Empresa empresa = new Empresa(txtRazaoSocial.getText().toString(), txtNomeFantasia.getText().toString(), txtCnpj.getText().toString(),
-                txtCep.getText().toString(), txtUf.getText().toString(), txtMunicipio.getText().toString());
+                txtCep.getText().toString(), txtUf.getText().toString(), txtMunicipio.getText().toString(), txtEmail.getText().toString());
 
         CadastroEmpresaDAO cadastroEmpresaDAO = new CadastroEmpresaDAO();
         if (cadastroEmpresaDAO.insert(empresa)) {

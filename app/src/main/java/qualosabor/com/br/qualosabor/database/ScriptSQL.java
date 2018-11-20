@@ -12,11 +12,11 @@
 //        createSql.append("cnpj VARCHAR (20) NOT NULL, ");
 //        createSql.append("cep VARCHAR (15) NOT NULL, ");
 //        createSql.append("uf VARCHAR (2) NOT NULL, ");
-//        createSql.append("municipio VARCHAR (100) NOT NULL);");
+//        createSql.append("municipio VARCHAR (100) NOT NULL, ");
+//        createSql.append("email VARCHAR (100) NOT NULL);");
 //
 //        createSql.append("CREATE TABLE USUARIO ( ");
 //        createSql.append("login VARCHAR (50) PRIMARY KEY, ");
-//        createSql.append("email VARCHAR (100) NOT NULL, ");
 //        createSql.append("senha VARCHAR (100) NOT NULL, ");
 //        createSql.append("id_empresa INTEGER NOT NULL);");
 //

@@ -29,7 +29,7 @@ public class CadastroSabor extends AppCompatActivity {
         txtIngre = (EditText) CadastroSabor.this.findViewById(R.id.txtIngre);
     }
 
-    public void cadastroSabor (View view){ // View V serve para ação de CLICK
+    public void cadastrarSabor(View view){ // View V serve para ação de CLICK
         CadastroEmpresa c = new CadastroEmpresa();
         Sabor sabor = new Sabor(txtNomeSabor.getText().toString(), txtIngre.getText().toString(), null, 1);
         Log.i("teste", "Usuário" + c.idEmpresa + " Inserido com sucesso!");

@@ -75,7 +75,7 @@
         android:layout_marginEnd="148dp"
         android:layout_marginRight="148dp"
         android:background="@drawable/button_background_orange"
-        android:onClick="cadastroSabor"
+        android:onClick="cadastrarSabor"
         android:text="Cadastrar Sabor"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"

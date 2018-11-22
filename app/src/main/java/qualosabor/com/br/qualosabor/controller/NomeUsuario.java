@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import qualosabor.com.br.qualosabor.R;
@@ -25,6 +26,11 @@ public class NomeUsuario extends AppCompatActivity {
         setContentView(R.layout.activity_nome_usuario);
 
         txtNomeCliente = (EditText) NomeUsuario.this.findViewById(R.id.txtCodNomeUsu);
+
+        Intent it = getIntent();
+        String mesa = it.getStringExtra("NumeroMesa");
+        TextView label = findViewById(R.id.txtNomeUsu);
+        label.setText("Código scaneado com sucesso na Mesa "+mesa+"! Por favor, insira seu nome:");
     }
 
     public void cadastroCliente (View view){ // View V serve para ação de CLICK

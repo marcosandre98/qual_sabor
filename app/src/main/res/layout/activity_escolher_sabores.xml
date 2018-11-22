@@ -14,7 +14,6 @@
         android:layout_marginStart="163dp"
         android:layout_marginTop="12dp"
         android:textSize="15dp"
-        android:text="          Bem Vindo, Guilherme!         Escolha o(s) sabor(es) que deseja:"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

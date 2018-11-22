@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -33,7 +34,8 @@ public class EscolherSabores extends AppCompatActivity {
 
         Intent it = getIntent();
         String cliente = it.getStringExtra("NomeCliente");
-        Toast.makeText(this, cliente, Toast.LENGTH_LONG).show();
+        TextView label = findViewById(R.id.txtBuscaSabor);
+        label.setText("Bem Vindo, "+cliente+"! Escolha o(s) sabor(es) que deseja:");
 
         this.buscaSabor();
     }

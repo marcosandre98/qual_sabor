@@ -52,8 +52,8 @@ public class LoginUsuario extends AppCompatActivity {
                 Toast.makeText(this, "Você cancelou a leitura!", Toast.LENGTH_LONG).show();
             } else {
                 Toast.makeText(this, result.getContents(), Toast.LENGTH_LONG).show();
-                NomeUsuario nomUsu = new NomeUsuario();
                 Intent abreNomeUsuario = new Intent(this, NomeUsuario.class);
+                abreNomeUsuario.putExtra("NumeroMesa", result.getContents().toString());
                 startActivity(abreNomeUsuario);
             }
         } else {

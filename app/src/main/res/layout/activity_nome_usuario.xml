@@ -16,8 +16,6 @@
             android:layout_marginStart="163dp"
             android:layout_marginTop="48dp"
             android:textSize="15dp"
-            android:text="Código scaneado com sucesso na Mesa 120!
-                  Por favor, insira seu nome:"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

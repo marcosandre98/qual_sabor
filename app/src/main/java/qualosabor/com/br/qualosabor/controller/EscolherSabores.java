@@ -24,6 +24,7 @@ public class EscolherSabores extends AppCompatActivity {
     private ListView listaSabores;
     private ArrayList<Empresa> listarSabores = new ArrayList<>();
     private ArrayAdapter adapterLista;
+    private String nomeAux = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +37,7 @@ public class EscolherSabores extends AppCompatActivity {
         String cliente = it.getStringExtra("NomeCliente");
         TextView label = findViewById(R.id.txtBuscaSabor);
         label.setText("Bem Vindo, "+cliente+"! Escolha o(s) sabor(es) que deseja:");
+        nomeAux = cliente;
 
         this.buscaSabor();
     }
@@ -49,6 +51,7 @@ public class EscolherSabores extends AppCompatActivity {
 
     public void avancar(View view){
         Intent abrePedido = new Intent(this, ConfirmacaoPedido.class);
+        abrePedido.putExtra("NomeCliente", nomeAux);
         startActivity(abrePedido);
     }
 }

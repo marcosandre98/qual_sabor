@@ -19,6 +19,7 @@ android {
 }
 
 dependencies {
+    implementation 'com.facebook.android:facebook-android-sdk:4.28.0'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support:design:28.0.0'
@@ -31,5 +32,8 @@ dependencies {
     implementation 'com.google.zxing:core:3.2.1' // Não remover, é utilizado para ler o QR CODE
     implementation 'com.journeyapps:zxing-android-embedded:3.2.0@aar'
     // Não remover, é utilizado para ler o QR CODE
+
+
+
 
 }

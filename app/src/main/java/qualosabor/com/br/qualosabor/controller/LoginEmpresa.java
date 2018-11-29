@@ -4,11 +4,18 @@ import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.orm.SugarRecord;
+
+import java.util.List;
 
 import qualosabor.com.br.qualosabor.R;
+import qualosabor.com.br.qualosabor.models.Usuario;
 
 public class LoginEmpresa extends AppCompatActivity {
 
@@ -36,9 +43,22 @@ public class LoginEmpresa extends AppCompatActivity {
         startActivity(abreCadEmpresa);
     }
 
-    public void abrirEmpresa(View view){
-        Intent abreMenuEmpresa = new Intent(this, MenuEmpresa.class);
-        startActivity(abreMenuEmpresa);
+    public void abrirEmpresa(View view) {
+        //verifica se o usuário existe
+        if (validaLogin()) {
+            Intent abreMenuEmpresa = new Intent(this, MenuEmpresa.class);
+            startActivity(abreMenuEmpresa);
+        } else {
+            Toast.makeText(this, "Erro! Usuário ou senha incorretos!", Toast.LENGTH_SHORT).show();
+        }
     }
 
+    public boolean validaLogin() {
+        List<Usuario> usuarios = Usuario.find(Usuario.class, "login_usuario = ?", txtLogin.getText().toString());
+        if (!usuarios.isEmpty()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

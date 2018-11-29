@@ -32,5 +32,4 @@ dependencies {
     implementation 'com.google.zxing:core:3.2.1' // Não remover, é utilizado para ler o QR CODE
     implementation 'com.journeyapps:zxing-android-embedded:3.2.0@aar' // Não remover, é utilizado para ler o QR CODE
     implementation 'com.android.support:recyclerview-v7:28.0.0' // Utilizado para o RecyclerView (Listas).
-    implementation 'javax.mail:javax.mail-api:1.5.3'
 }

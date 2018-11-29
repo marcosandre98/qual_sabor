@@ -58,8 +58,6 @@ public class CadastroEmpresa extends AppCompatActivity {
             Toast.makeText(this,"Empresa inserida com sucesso!", Toast.LENGTH_SHORT).show();
             this.idEmpresa = empresa.getId();
             this.avancar(view);
-            Mail m = new Mail();
-            m.enviarEmail();
         } else {
             Toast.makeText(this,"Erro ao inserir a empresa!", Toast.LENGTH_SHORT).show();
         }

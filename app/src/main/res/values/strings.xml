@@ -32,5 +32,7 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_menu_empresa">Menu Empresa</string>
-    <string name="facebook_app_id">2214108191935259</string> <string name="fb_login_protocol_scheme">fb2214108191935259</string>
+    <string name="facebook_app_id">2214108191935259</string>
+    <string name="fb_login_protocol_scheme">fb2214108191935259</string>
+    <string name="title_activity_add_qrcode">add_qrcode</string>
 </resources>

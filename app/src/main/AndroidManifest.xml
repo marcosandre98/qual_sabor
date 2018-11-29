@@ -4,9 +4,9 @@
     package="qualosabor.com.br.qualosabor">
 
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <uses-feature android:name="android.hardware.camera" />
 
@@ -42,6 +42,7 @@
         </activity>
         <activity
             android:name=".controller.CadastroEmpresa"
+            android:label="Cadastrar Empresa"
             android:parentActivityName=".controller.LoginEmpresa" />
         <activity android:name=".controller.ListarEmpresas" />
         <activity android:name=".MainActivity" />
@@ -52,8 +53,10 @@
         <activity android:name=".controller.NomeUsuario" />
         <activity android:name=".controller.EscolherSabores" />
         <activity android:name=".controller.ConfirmacaoPedido" />
-       <!-- <activity android:name=".controller.MenuEmpresa" /> ->>
-       <!- <activity android:name=".CadastrarSabores" /> -->
+        <!--
+       <activity android:name=".controller.MenuEmpresa" /> ->>
+       <!- <activity android:name=".CadastrarSabores" />
+        -->
         <activity android:name=".controller.ListarSabores" />
         <activity
             android:name=".controller.ConfirmaCadastro"
@@ -65,10 +68,11 @@
             android:name=".controller.MenuEmpresa"
             android:label="@string/title_activity_menu_empresa"
             android:theme="@style/AppTheme.NoActionBar"
-            tools:ignore="DuplicateActivity"></activity>
+            tools:ignore="DuplicateActivity" />
 
-        <meta-data android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/> <activity android:name="com.facebook.FacebookActivity" android:configChanges= "keyboard|keyboardHidden|screenLayout|screenSize|orientation" android:label="@string/app_name" /> <activity android:name="com.facebook.CustomTabActivity" android:exported="true"> <intent-filter> <action android:name="android.intent.action.VIEW" /> <category android:name="android.intent.category.DEFAULT" /> <category android:name="android.intent.category.BROWSABLE" /> <data android:scheme="@string/fb_login_protocol_scheme" /> </intent-filter> </activity>
+
+        <activity android:name=".controller.QRCode"></activity>
     </application>
 
 </manifest>

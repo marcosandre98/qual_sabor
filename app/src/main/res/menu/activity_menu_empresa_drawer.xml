@@ -13,6 +13,10 @@
             android:icon="@drawable/ic_list_black_24dp"
             android:title="Listar Sabores" />
         <item
+            android:id="@+id/cadas_qrcode"
+            android:icon="@drawable/ic_add_qrcode"
+            android:title="QR Code" />
+        <item
             android:id="@+id/config_empresa"
             android:icon="@drawable/ic_menu_manage"
             android:title="Configurações" />

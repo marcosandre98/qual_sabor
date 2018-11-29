@@ -1,11 +1,13 @@
 package qualosabor.com.br.qualosabor.controller;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import qualosabor.com.br.qualosabor.MainActivity;
 import qualosabor.com.br.qualosabor.R;
 
 public class ConfirmaCadastro extends AppCompatActivity {

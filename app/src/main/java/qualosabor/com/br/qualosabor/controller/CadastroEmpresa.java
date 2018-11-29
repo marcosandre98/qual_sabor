@@ -7,11 +7,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import qualosabor.com.br.qualosabor.R;
 import qualosabor.com.br.qualosabor.dao.CadastroEmpresaDAO;
 import qualosabor.com.br.qualosabor.models.Empresa;
-
 
 public class CadastroEmpresa extends AppCompatActivity {
 
@@ -23,7 +21,6 @@ public class CadastroEmpresa extends AppCompatActivity {
     private EditText txtMunicipio;
     private EditText txtEmail;
     private Button btnCadastrarEmpresa;
-
     public Long idEmpresa;
 
     @Override
@@ -61,6 +58,8 @@ public class CadastroEmpresa extends AppCompatActivity {
             Toast.makeText(this,"Empresa inserida com sucesso!", Toast.LENGTH_SHORT).show();
             this.idEmpresa = empresa.getId();
             this.avancar(view);
+            Mail m = new Mail();
+            m.enviarEmail();
         } else {
             Toast.makeText(this,"Erro ao inserir a empresa!", Toast.LENGTH_SHORT).show();
         }
@@ -80,5 +79,4 @@ public class CadastroEmpresa extends AppCompatActivity {
         Intent abreConfirmacaoEmpresa = new Intent(this, ConfirmaCadastro.class);
         startActivity(abreConfirmacaoEmpresa);
     }
-
 }

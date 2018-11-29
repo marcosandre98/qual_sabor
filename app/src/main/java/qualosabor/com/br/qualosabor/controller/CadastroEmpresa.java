@@ -7,6 +7,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.creativityapps.gmailbackgroundlibrary.BackgroundMail;
+
 import qualosabor.com.br.qualosabor.R;
 import qualosabor.com.br.qualosabor.dao.CadastroEmpresaDAO;
 import qualosabor.com.br.qualosabor.models.Empresa;
@@ -58,6 +61,7 @@ public class CadastroEmpresa extends AppCompatActivity {
             Toast.makeText(this,"Empresa inserida com sucesso!", Toast.LENGTH_SHORT).show();
             this.idEmpresa = empresa.getId();
             this.avancar(view);
+            this.enviaEmail("1@1"); //txtEmail.getText().toString()
         } else {
             Toast.makeText(this,"Erro ao inserir a empresa!", Toast.LENGTH_SHORT).show();
         }
@@ -76,5 +80,28 @@ public class CadastroEmpresa extends AppCompatActivity {
     public void avancar(View view){
         Intent abreConfirmacaoEmpresa = new Intent(this, ConfirmaCadastro.class);
         startActivity(abreConfirmacaoEmpresa);
+    }
+
+    public void enviaEmail(String dest) {
+        BackgroundMail.newBuilder(this)
+                .withUsername("pizzaqualeosabor@gmail.com")
+                .withPassword("qualesabor123")
+                .withMailto(dest)
+                .withType(BackgroundMail.TYPE_PLAIN)
+                .withSubject("Confirmação de Cadastro")
+                .withBody("Código de confirmação ADF123")
+                .withOnSuccessCallback(new BackgroundMail.OnSuccessCallback() {
+                    @Override
+                    public void onSuccess() {
+                        System.out.println("Foi email");
+                    }
+                })
+                .withOnFailCallback(new BackgroundMail.OnFailCallback() {
+                    @Override
+                    public void onFail() {
+                        System.out.println("Não foi email");
+                    }
+                })
+                .send();
     }
 }

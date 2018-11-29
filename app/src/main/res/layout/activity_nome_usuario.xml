@@ -61,7 +61,7 @@
         android:id="@+id/login_button"
         android:layout_width="198dp"
         android:layout_height="33dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="15dp"
         android:background="@drawable/button_background_blue"
         android:text="Entrar com o Facebook"
         app:layout_constraintEnd_toEndOf="parent"

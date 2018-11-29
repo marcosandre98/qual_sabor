@@ -30,8 +30,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation 'com.github.satyan:sugar:1.3.1'
     implementation 'com.google.zxing:core:3.2.1' // Não remover, é utilizado para ler o QR CODE
-    implementation 'com.journeyapps:zxing-android-embedded:3.2.0@aar'
-    // Não remover, é utilizado para ler o QR CODE
-    implementation 'com.android.support:recyclerview-v7:28.0.0'
-    // Utilizado para o RecyclerView (Listas).
+    implementation 'com.journeyapps:zxing-android-embedded:3.2.0@aar' // Não remover, é utilizado para ler o QR CODE
+    implementation 'com.android.support:recyclerview-v7:28.0.0' // Utilizado para o RecyclerView (Listas).
+    implementation 'com.github.yesidlazaro:GmailBackground:1.2.0'
 }

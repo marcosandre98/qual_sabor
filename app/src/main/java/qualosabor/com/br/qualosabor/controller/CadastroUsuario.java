@@ -44,8 +44,8 @@ public class CadastroUsuario extends AppCompatActivity {
     }
 
     public void avancar(View view) {
-        Intent abreLoginEmpresa = new Intent(this, LoginEmpresa.class);
-        startActivity(abreLoginEmpresa);
+        Intent abreMenuEmpresa = new Intent(this, MenuEmpresa.class);
+        startActivity(abreMenuEmpresa);
     }
 
 }

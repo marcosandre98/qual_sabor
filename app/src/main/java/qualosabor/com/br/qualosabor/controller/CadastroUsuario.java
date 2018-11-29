@@ -33,9 +33,7 @@ public class CadastroUsuario extends AppCompatActivity {
     }
 
     public void cadastrarUsuario(View view) {
-        CadastroEmpresa c = new CadastroEmpresa();
         Usuario usuario = new Usuario(txtUsuarioLogin.getText().toString(), txtSenha.getText().toString(),1);
-        Log.i("teste", "Usuário" + c.idEmpresa + " Inserido com sucesso!");
         CadastroUsuarioDAO cadastroUsuarioDAO = new CadastroUsuarioDAO();
         if (cadastroUsuarioDAO.insert(usuario)) {
             Toast.makeText(this, "Usuário inserido com sucesso!", Toast.LENGTH_SHORT).show();

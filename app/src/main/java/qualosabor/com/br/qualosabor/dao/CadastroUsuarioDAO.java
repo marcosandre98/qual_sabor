@@ -9,7 +9,7 @@ public class CadastroUsuarioDAO {
     public Boolean insert(Usuario usuario) {
         try {
             usuario.save();
-            Log.i("teste", "Usuário" + usuario.getId() + " Inserido com sucesso!");
+            Log.i("teste", "Usuário " + usuario.getId() +" - " + usuario.getLoginUsuario() + " Inserido com sucesso!");
             return true;
         } catch(Exception erro) {
             Log.e("teste", "Erro " + erro.getMessage());

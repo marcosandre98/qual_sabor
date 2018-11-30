@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import java.util.Random;
 
 import com.creativityapps.gmailbackgroundlibrary.BackgroundMail;
 
@@ -25,6 +26,8 @@ public class CadastroEmpresa extends AppCompatActivity {
     private EditText txtEmail;
     private Button btnCadastrarEmpresa;
     public Long idEmpresa;
+    int number;
+    Random myRandom = new Random();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +64,7 @@ public class CadastroEmpresa extends AppCompatActivity {
             Toast.makeText(this,"Empresa inserida com sucesso!", Toast.LENGTH_SHORT).show();
             this.idEmpresa = empresa.getId();
             this.avancar(view);
-            this.enviaEmail("1@1"); //txtEmail.getText().toString()
+            this.enviaEmail(txtEmail.getText().toString()); //txtEmail.getText().toString()
         } else {
             Toast.makeText(this,"Erro ao inserir a empresa!", Toast.LENGTH_SHORT).show();
         }
@@ -83,13 +86,16 @@ public class CadastroEmpresa extends AppCompatActivity {
     }
 
     public void enviaEmail(String dest) {
+
+        number =  myRandom.nextInt(99) * 1600 + 27 + myRandom.nextInt(10);
+
         BackgroundMail.newBuilder(this)
                 .withUsername("pizzaqualeosabor@gmail.com")
                 .withPassword("qualesabor123")
                 .withMailto(dest)
                 .withType(BackgroundMail.TYPE_PLAIN)
                 .withSubject("Confirmação de Cadastro")
-                .withBody("Código de confirmação ADF123")
+                .withBody("Código de confirmação: "+number)
                 .withOnSuccessCallback(new BackgroundMail.OnSuccessCallback() {
                     @Override
                     public void onSuccess() {

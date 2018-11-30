@@ -26,7 +26,7 @@ public class QRCode extends AppCompatActivity {
     }
 
     public void gerarQRCode(View view){ // View V serve para ação de CLICK
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://chart.googleapis.com/chart?chs=500x500&cht=qr&chl="+txtQRcode.getText().toString()));
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://chart.googleapis.com/chart?chs=500x500&cht=qr&chl=Mesa:"+txtQRcode.getText().toString()+"Empresa:"));
         startActivity(intent);
         Toast.makeText(this, "QR Code gerado com sucesso!", Toast.LENGTH_SHORT).show();
     }

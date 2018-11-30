@@ -13,6 +13,8 @@ import com.creativityapps.gmailbackgroundlibrary.BackgroundMail;
 
 import qualosabor.com.br.qualosabor.R;
 import qualosabor.com.br.qualosabor.dao.CadastroEmpresaDAO;
+import qualosabor.com.br.qualosabor.dao.GravaCodigoDAO;
+import qualosabor.com.br.qualosabor.models.CodigoVerificacao;
 import qualosabor.com.br.qualosabor.models.Empresa;
 
 public class CadastroEmpresa extends AppCompatActivity {
@@ -87,27 +89,24 @@ public class CadastroEmpresa extends AppCompatActivity {
 
     public void enviaEmail(String dest) {
 
-        number =  myRandom.nextInt(99) * 1600 + 27 + myRandom.nextInt(10);
+        number =  myRandom.nextInt(152) * myRandom.nextInt(123) * myRandom.nextInt(526);
 
-        BackgroundMail.newBuilder(this)
-                .withUsername("pizzaqualeosabor@gmail.com")
-                .withPassword("qualesabor123")
-                .withMailto(dest)
-                .withType(BackgroundMail.TYPE_PLAIN)
-                .withSubject("Confirmação de Cadastro")
-                .withBody("Código de confirmação: "+number)
-                .withOnSuccessCallback(new BackgroundMail.OnSuccessCallback() {
-                    @Override
-                    public void onSuccess() {
-                        System.out.println("Foi email");
-                    }
-                })
-                .withOnFailCallback(new BackgroundMail.OnFailCallback() {
-                    @Override
-                    public void onFail() {
-                        System.out.println("Não foi email");
-                    }
-                })
-                .send();
+        CodigoVerificacao codigo = new CodigoVerificacao(number);
+        GravaCodigoDAO gravaCodigoDAO = new GravaCodigoDAO();
+
+        if (gravaCodigoDAO.insert(codigo)) {
+
+            BackgroundMail.newBuilder(this).withUsername("pizzaqualeosabor@gmail.com").withPassword("qualesabor123").withMailto(dest).withType(BackgroundMail.TYPE_PLAIN)
+            .withSubject("Confirmação de Cadastro").withBody("Código de confirmação: "+number).withOnSuccessCallback(new BackgroundMail.OnSuccessCallback() {
+               @Override
+               public void onSuccess() { }
+            }).withOnFailCallback(new BackgroundMail.OnFailCallback() {
+                        @Override
+               public void onFail() { }
+            }).send();
+
+        } else {
+            Toast.makeText(this,"Erro ao gerar seu código de verificação, por favor entre em contato com o suporte!", Toast.LENGTH_SHORT).show();
+        }
     }
 }

@@ -66,7 +66,6 @@ public class NomeUsuario extends AppCompatActivity {
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
-                Log.e("bananinha fodao", "onError: DEUCERTO");
             }
 
             @Override
@@ -76,7 +75,6 @@ public class NomeUsuario extends AppCompatActivity {
 
             @Override
             public void onError(FacebookException error) {
-                Log.e("bananinha fodao", "onError: " + error.getMessage() );
             }
 
             AccessToken accessToken = AccessToken.getCurrentAccessToken();

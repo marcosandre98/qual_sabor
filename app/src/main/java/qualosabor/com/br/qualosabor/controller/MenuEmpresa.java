@@ -59,6 +59,9 @@ public class MenuEmpresa extends AppCompatActivity
         } else if (id == R.id.list_sabor) {
             Intent abreListarSabores = new Intent(this, ListarSabores.class);
             startActivity(abreListarSabores);
+        } else if (id == R.id.config_empresa) {
+            Intent abreCadastraQRCode = new Intent(this, ConfiguracoesEmpresa.class);
+            startActivity(abreCadastraQRCode);
         } else if (id == R.id.cadas_qrcode) {
             Intent abreCadastraQRCode = new Intent(this, QRCode.class);
             startActivity(abreCadastraQRCode);

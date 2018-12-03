@@ -35,16 +35,11 @@ public class ConfirmaCadastro extends AppCompatActivity {
     }
 	
 	private boolean verificaCodigo(String codigoConfirmacao) {
-
-		//List<CodigoVerificacao> codigo = CodigoVerificacao.find(CodigoVerificacao.class, "codigo = ?", codigoConfirmacao);
-		//int codigoBanco = Integer.parseInt(String.valueOf(codigo));
-		//int codigoPassado = Integer.parseInt(codigoConfirmacao);
-
-		/*if (codigoPassado == codigoBanco) {
+		List<CodigoVerificacao> codigo = CodigoVerificacao.find(CodigoVerificacao.class, "codigo_validacao = ?", codigoConfirmacao);
+		if (!codigo.isEmpty()) {
 			return true;
 		} else {
 			return false;
-		}*/
-		return true;
+		}
 	}
 }

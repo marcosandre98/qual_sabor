@@ -63,12 +63,12 @@ public class CadastroEmpresa extends AppCompatActivity {
 
         CadastroEmpresaDAO cadastroEmpresaDAO = new CadastroEmpresaDAO();
         if (cadastroEmpresaDAO.insert(empresa)) {
-            Toast.makeText(this,"Empresa inserida com sucesso!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"Empresa inserida com sucesso.", Toast.LENGTH_SHORT).show();
             this.idEmpresa = empresa.getId();
             this.avancar(view);
             this.enviaEmail(txtEmail.getText().toString()); //txtEmail.getText().toString()
         } else {
-            Toast.makeText(this,"Erro ao inserir a empresa!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"Erro ao inserir a empresa.", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -98,11 +98,15 @@ public class CadastroEmpresa extends AppCompatActivity {
 
             BackgroundMail.newBuilder(this).withUsername("pizzaqualeosabor@gmail.com").withPassword("qualesabor123").withMailto(dest).withType(BackgroundMail.TYPE_PLAIN)
             .withSubject("Confirmação de Cadastro").withBody("Código de confirmação: "+number).withOnSuccessCallback(new BackgroundMail.OnSuccessCallback() {
-               @Override
-               public void onSuccess() { }
+                @Override
+                public void onSuccess() {
+                    Toast.makeText(CadastroEmpresa.this, "E-mail enviado com sucesso.", Toast.LENGTH_SHORT).show();
+                }
             }).withOnFailCallback(new BackgroundMail.OnFailCallback() {
                         @Override
-               public void onFail() { }
+               public void onFail() {
+                    Toast.makeText(CadastroEmpresa.this, "Falha no envio do E-mail.", Toast.LENGTH_SHORT).show();
+               }
             }).send();
 
         } else {

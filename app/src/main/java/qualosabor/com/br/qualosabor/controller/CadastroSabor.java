@@ -1,6 +1,7 @@
 package qualosabor.com.br.qualosabor.controller;
 
 import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -27,6 +28,9 @@ public class CadastroSabor extends AppCompatActivity {
 
         txtNomeSabor = (EditText) CadastroSabor.this.findViewById(R.id.txtNomeSabor);
         txtIngre = (EditText) CadastroSabor.this.findViewById(R.id.txtIngre);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Cadastrar Sabor");
     }
 
     public void cadastrarSabor(View view){ // View V serve para ação de CLICK
@@ -39,7 +43,6 @@ public class CadastroSabor extends AppCompatActivity {
             Toast.makeText(this, "Erro ao inserir sabor!", Toast.LENGTH_SHORT).show();
         }
     }
-
     public void voltar(View view){
         Intent abreMenuEmpresa = new Intent(this, MenuEmpresa.class);
         startActivity(abreMenuEmpresa);

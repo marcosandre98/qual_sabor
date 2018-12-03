@@ -42,19 +42,28 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name=".controller.CadastroEmpresa"
-            android:label="Cadastrar Empresa"
-            android:parentActivityName=".controller.LoginEmpresa" />
+        android:name=".controller.CadastroEmpresa"
+        android:label="Cadastrar Empresa"
+        android:parentActivityName=".controller.LoginEmpresa" />
+
+
+
         <activity android:name=".controller.ListarEmpresas" />
         <activity android:name=".MainActivity" />
         <activity
             android:name=".controller.LoginEmpresa"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".controller.LoginUsuario" />
+
+        <activity
+            android:name=".controller.LoginUsuario"
+            android:parentActivityName=".MainActivity"/>
+
         <activity
             android:name=".controller.NomeUsuario"
-            android:label="Nome" />
+            android:label="Nome"
+            android:parentActivityName=".controller.LoginUsuario"/>
         <activity
             android:name=".controller.EscolherSabores"
             android:label="Escolher Sabores" />
@@ -67,7 +76,8 @@
         -->
         <activity
             android:name=".controller.ListarSabores"
-            android:label="Lista de Sabores" />
+            android:label="Lista de Sabores"
+            android:parentActivityName=".controller.MenuEmpresa"/>
         <activity
             android:name=".controller.ConfirmaCadastro"
             android:label="@string/title_activity_confirma_cadastro"
@@ -77,7 +87,8 @@
             android:label="Cadastrar Usuário" />
         <activity
             android:name=".controller.CadastroSabor"
-            android:label="Cadastrar Sabor" />
+            android:label="Cadastrar Sabor"
+            android:parentActivityName=".controller.MenuEmpresa"/>
         <activity
             android:name=".controller.ListarPedidos"
             android:label="Listar Pedidos" />
@@ -112,9 +123,12 @@
         </activity>
         <activity
             android:name=".controller.QRCode"
-            android:label="Gerar QR Code" />
+            android:label="Gerar QR Code"
+            android:parentActivityName=".controller.MenuEmpresa"/>
+
         <activity android:name=".controller.ConfiguracoesEmpresa"
-            android:label="Configurações" ></activity>
+            android:label="Configurações"
+            android:parentActivityName=".controller.MenuEmpresa"></activity>
     </application>
 
 </manifest>

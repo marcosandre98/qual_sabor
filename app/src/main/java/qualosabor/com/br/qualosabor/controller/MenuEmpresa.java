@@ -13,10 +13,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Toast;
 import android.view.Gravity;
 
+import java.util.List;
+
 import qualosabor.com.br.qualosabor.R;
+import qualosabor.com.br.qualosabor.models.Pedido;
 
 public class MenuEmpresa extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -35,6 +40,15 @@ public class MenuEmpresa extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+        ListView listview = (ListView) findViewById(R.id.listaSabores);
+
+        List<Pedido> pedidos = Pedido.listAll(Pedido.class);
+
+        ArrayAdapter<Pedido> adapter;
+        adapter = new ArrayAdapter<Pedido>(this, android.R.layout.simple_list_item_1, pedidos);
+        listview.setAdapter(adapter);
     }
 
     @Override
@@ -70,6 +84,16 @@ public class MenuEmpresa extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void listarPedidos(View view) {
+        Intent abrePedidos = new Intent(this, ListarPedidos.class);
+        startActivity(abrePedidos);
+    }
+
+    public void listarSaboresMaisPedidos(View view) {
+        Intent abreSaboresMaisPedidos = new Intent(this, ListaSaboresMaisPedidos.class);
+        startActivity(abreSaboresMaisPedidos);
     }
 
     public void confirmarPedido(View view){

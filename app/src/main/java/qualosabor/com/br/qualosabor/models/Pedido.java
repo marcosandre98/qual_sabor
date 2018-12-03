@@ -63,4 +63,13 @@ public class Pedido extends SugarRecord {
         this.situacaoPedido = situacaoPedido;
     }
 
+    @Override
+    public String toString() {
+
+        return "Mesa: " + this.numeroMesa
+                + "; Sabor: " + this.idSabor
+                + "; Cliente: " + this.idCliente
+                + "; Situação: " + this.situacaoPedido;
+    }
+
 }

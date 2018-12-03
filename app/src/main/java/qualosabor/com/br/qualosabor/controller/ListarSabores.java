@@ -1,36 +1,38 @@
 package qualosabor.com.br.qualosabor.controller;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 import qualosabor.com.br.qualosabor.R;
-import qualosabor.com.br.qualosabor.adapter.EmpresaAdapter;
-import qualosabor.com.br.qualosabor.models.Empresa;
+import qualosabor.com.br.qualosabor.adapter.SaborAdapter;
+import qualosabor.com.br.qualosabor.models.Sabor;
 
 public class ListarSabores extends AppCompatActivity {
-
-    private ListView listaSaboresCadastrados;
-    private ArrayList<Empresa> listarSaboresCadastrados = new ArrayList<>();
-    private ArrayAdapter adapterLista;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listar_sabores);
 
-        listaSaboresCadastrados = (ListView) findViewById(R.id.listSaboresCadastrados);
+        ListView listview = (ListView) findViewById(R.id.listSaboresCadastrados);
 
-        this.buscaSaborCadastrado();
+        List<Sabor> sabores = Sabor.listAll(Sabor.class);
+
+        ArrayAdapter<Sabor> adapter;
+        adapter = new ArrayAdapter<Sabor>(this, android.R.layout.simple_list_item_1, sabores);
+        listview.setAdapter(adapter);
     }
 
-    public void buscaSaborCadastrado(){
-//        CadastroEmpresaDAO cadastroEmpresaDAO = new CadastroEmpresaDAO(getApplicationContext());
-  //      listarSaboresCadastrados = cadastroEmpresaDAO.buscaEmpresas(this);
-        adapterLista = new EmpresaAdapter(this, listarSaboresCadastrados);
-        listaSaboresCadastrados.setAdapter(adapterLista);
+    public void adicionarSabor(View view) {
+        Intent abreAdicionaSabor = new Intent(this, CadastroSabor.class);
+        startActivity(abreAdicionaSabor);
     }
 }

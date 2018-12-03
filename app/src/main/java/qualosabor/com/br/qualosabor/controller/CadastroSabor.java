@@ -30,9 +30,7 @@ public class CadastroSabor extends AppCompatActivity {
     }
 
     public void cadastrarSabor(View view){ // View V serve para ação de CLICK
-        CadastroEmpresa c = new CadastroEmpresa();
         Sabor sabor = new Sabor(txtNomeSabor.getText().toString(), txtIngre.getText().toString(), null, 1);
-        Log.i("teste", "Usuário" + c.idEmpresa + " Inserido com sucesso!");
         CadastroSaborDAO cadastroSaborDAO = new CadastroSaborDAO();
         if (cadastroSaborDAO.insert(sabor)) {
             Toast.makeText(this, "Sabor cadastrado com sucesso!", Toast.LENGTH_SHORT).show();

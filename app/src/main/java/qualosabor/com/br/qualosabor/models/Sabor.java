@@ -55,4 +55,11 @@ public class Sabor extends SugarRecord {
     public void setIdEmpresa(Integer idEmpresa) {
         this.idEmpresa = idEmpresa;
     }
+
+    @Override
+    public String toString() {
+
+        return "Sabor: " + this.nomeSabor
+                + "; Ingredientes: " + this.ingredientes;
+    }
 }

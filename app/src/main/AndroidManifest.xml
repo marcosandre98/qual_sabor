@@ -77,6 +77,12 @@
             android:name=".controller.CadastroSabor"
             android:label="Cadastrar Sabor" />
         <activity
+            android:name=".controller.ListarPedidos"
+            android:label="Listar Pedidos" />
+        <activity
+            android:name=".controller.ListaSaboresMaisPedidos"
+            android:label="Sabores Mais Pedidos" />
+        <activity
             android:name=".controller.MenuEmpresa"
             android:label="@string/title_activity_menu_empresa"
             android:theme="@style/AppTheme.NoActionBar"

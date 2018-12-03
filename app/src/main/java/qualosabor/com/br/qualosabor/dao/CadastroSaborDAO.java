@@ -10,7 +10,7 @@ public class CadastroSaborDAO {
     public Boolean insert(Sabor sabor) {
         try {
             sabor.save();
-            Log.i("teste", "Sabor" + sabor.getId() + " Inserido com sucesso!");
+            Log.i("teste", "Sabor " + sabor.getId() + " Inserido com sucesso!");
             return true;
         } catch(Exception erro) {
             Log.e("teste", "Erro " + erro.getMessage());

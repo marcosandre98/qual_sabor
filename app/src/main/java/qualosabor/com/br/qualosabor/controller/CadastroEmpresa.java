@@ -122,31 +122,31 @@ public class CadastroEmpresa extends AppCompatActivity {
         String erros = "";
 
         if(txtRazaoSocial.getText().toString().equals("")){
-            //erros = "Campo Razão Social é obrigatório!";
+            erros = "Os campos marcados em vermelho estão sem informação ou incorretos.";
             txtRazaoSocial.setError("Esse campo é obrigatório.");
         }
         if(txtNomeFantasia.getText().toString().equals("")){
-            //erros = "Campo Nome Fantasia é obrigatório!";
+            erros = "Os campos marcados em vermelho estão sem informação ou incorretos.";
             txtNomeFantasia.setError("Esse campo é obrigatório.");
         }
         if(txtCnpj.getText().toString().equals("")){
-            //erros = "Campo CNPJ é obrigatório!";
+            erros = "Os campos marcados em vermelho estão sem informação ou incorretos.";
             txtCnpj.setError("Esse campo é obrigatório.");
         }
         if(txtCep.getText().toString().equals("")){
-            //erros = "Campo CEP é obrigatório!";
+            erros = "Os campos marcados em vermelho estão sem informação ou incorretos.";
             txtCep.setError("Esse campo é obrigatório.");
         }
         if(txtUf.getText().toString().equals("")){
-            //erros = "Campo UF é obrigatório!";
+            erros = "Os campos marcados em vermelho estão sem informação ou incorretos.";
             txtUf.setError("Esse campo é obrigatório.");
         }
         if(txtMunicipio.getText().toString().equals("")){
-            //erros = "Campo Município é obrigatório!";
+            erros = "Os campos marcados em vermelho estão sem informação ou incorretos.";
             txtMunicipio.setError("Esse campo é obrigatório.");
         }
         if(!txtEmail.getText().toString().contains("@")){
-            erros = "É necessário informar um e-mail válido!!";
+            erros = "Os campos marcados em vermelho estão sem informação ou incorretos.";
             txtEmail.setError("E-mail inválido.");
         }
 

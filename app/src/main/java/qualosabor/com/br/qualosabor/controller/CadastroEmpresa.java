@@ -61,14 +61,18 @@ public class CadastroEmpresa extends AppCompatActivity {
         Empresa empresa = new Empresa(txtRazaoSocial.getText().toString(), txtNomeFantasia.getText().toString(), txtCnpj.getText().toString(),
                 txtCep.getText().toString(), txtUf.getText().toString(), txtMunicipio.getText().toString(), txtEmail.getText().toString());
 
-        CadastroEmpresaDAO cadastroEmpresaDAO = new CadastroEmpresaDAO();
-        if (cadastroEmpresaDAO.insert(empresa)) {
-            Toast.makeText(this,"Empresa inserida com sucesso.", Toast.LENGTH_SHORT).show();
-            this.idEmpresa = empresa.getId();
-            this.avancar(view);
-            this.enviaEmail(txtEmail.getText().toString()); //txtEmail.getText().toString()
-        } else {
-            Toast.makeText(this,"Erro ao inserir a empresa.", Toast.LENGTH_SHORT).show();
+        String erros_totais = validar();
+
+        if(erros_totais.equals("")) {
+            CadastroEmpresaDAO cadastroEmpresaDAO = new CadastroEmpresaDAO();
+            if (cadastroEmpresaDAO.insert(empresa)) {
+                Toast.makeText(this, "Empresa inserida com sucesso.", Toast.LENGTH_SHORT).show();
+                this.idEmpresa = empresa.getId();
+                this.avancar(view);
+                this.enviaEmail(txtEmail.getText().toString()); //txtEmail.getText().toString()
+            }
+        }else {
+            Toast.makeText(CadastroEmpresa.this, "Verifique os erros: "+erros_totais, Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -113,4 +117,40 @@ public class CadastroEmpresa extends AppCompatActivity {
             Toast.makeText(this,"Erro ao gerar seu código de verificação, por favor entre em contato com o suporte!", Toast.LENGTH_SHORT).show();
         }
     }
+
+    public String validar(){
+        String erros = "";
+
+        if(txtRazaoSocial.getText().toString().equals("")){
+            //erros = "Campo Razão Social é obrigatório!";
+            txtRazaoSocial.setError("Esse campo é obrigatório.");
+        }
+        if(txtNomeFantasia.getText().toString().equals("")){
+            //erros = "Campo Nome Fantasia é obrigatório!";
+            txtNomeFantasia.setError("Esse campo é obrigatório.");
+        }
+        if(txtCnpj.getText().toString().equals("")){
+            //erros = "Campo CNPJ é obrigatório!";
+            txtCnpj.setError("Esse campo é obrigatório.");
+        }
+        if(txtCep.getText().toString().equals("")){
+            //erros = "Campo CEP é obrigatório!";
+            txtCep.setError("Esse campo é obrigatório.");
+        }
+        if(txtUf.getText().toString().equals("")){
+            //erros = "Campo UF é obrigatório!";
+            txtUf.setError("Esse campo é obrigatório.");
+        }
+        if(txtMunicipio.getText().toString().equals("")){
+            //erros = "Campo Município é obrigatório!";
+            txtMunicipio.setError("Esse campo é obrigatório.");
+        }
+        if(!txtEmail.getText().toString().contains("@")){
+            erros = "É necessário informar um e-mail válido!!";
+            txtEmail.setError("E-mail inválido.");
+        }
+
+        return erros;
+    }
+
 }

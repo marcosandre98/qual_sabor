@@ -94,7 +94,8 @@
             android:label="Listar Pedidos" />
         <activity
             android:name=".controller.ListaSaboresMaisPedidos"
-            android:label="Sabores Mais Pedidos" />
+            android:label="Sabores Mais Pedidos"
+            android:parentActivityName=".controller.MenuEmpresa"/>
         <activity
             android:name=".controller.MenuEmpresa"
             android:label="@string/title_activity_menu_empresa"

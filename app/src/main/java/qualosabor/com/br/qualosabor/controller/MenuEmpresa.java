@@ -75,6 +75,9 @@ public class MenuEmpresa extends AppCompatActivity
         } else if (id == R.id.cadas_qrcode) {
             Intent abreCadastraQRCode = new Intent(this, QRCode.class);
             startActivity(abreCadastraQRCode);
+        } else if (id == R.id.sair_menu) {
+            Intent abreLoginEmpresa = new Intent(this, LoginEmpresa.class);
+            startActivity(abreLoginEmpresa);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

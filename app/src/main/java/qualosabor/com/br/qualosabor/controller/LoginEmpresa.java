@@ -45,11 +45,17 @@ public class LoginEmpresa extends AppCompatActivity {
 
     public void abrirEmpresa(View view) {
         //verifica se o usuário existe
-        if (validaLogin()) {
-            Intent abreMenuEmpresa = new Intent(this, MenuEmpresa.class);
-            startActivity(abreMenuEmpresa);
+        String errosLogin = validarLogin();
+
+        if(errosLogin.equals("")) {
+            if (validaLogin()) {
+                Intent abreMenuEmpresa = new Intent(this, MenuEmpresa.class);
+                startActivity(abreMenuEmpresa);
+            } else {
+                Toast.makeText(this, "Erro! Usuário ou senha incorretos!", Toast.LENGTH_SHORT).show();
+            }
         } else {
-            Toast.makeText(this, "Erro! Usuário ou senha incorretos!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(LoginEmpresa.this, "Verifique os erros: "+errosLogin, Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -60,5 +66,20 @@ public class LoginEmpresa extends AppCompatActivity {
         } else {
             return false;
         }
+    }
+
+    public String validarLogin(){
+        String erros_login = "";
+
+        if(txtLogin.getText().toString().equals("")){
+            erros_login = "Os campos marcados em vermelho estão sem informação ou incorretos.";
+            txtLogin.setError("Esse campo é obrigatório.");
+        }
+        if(txtSenha.getText().toString().equals("")){
+            erros_login = "Os campos marcados em vermelho estão sem informação ou incorretos.";
+            txtSenha.setError("Esse campo é obrigatório.");
+        }
+
+        return erros_login;
     }
 }

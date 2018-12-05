@@ -26,13 +26,31 @@ public class QRCode extends AppCompatActivity {
     }
 
     public void gerarQRCode(View view){ // View V serve para ação de CLICK
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://chart.googleapis.com/chart?chs=500x500&cht=qr&chl=Mesa:"+txtQRcode.getText().toString()+"Empresa:"));
-        startActivity(intent);
-        Toast.makeText(this, "QR Code gerado com sucesso!", Toast.LENGTH_SHORT).show();
+
+        String erros_qrcode = validar_qr();
+
+        if(erros_qrcode.equals("")) {
+            Toast.makeText(this, "QR Code gerado com sucesso!", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://chart.googleapis.com/chart?chs=500x500&cht=qr&chl=Mesa:"+txtQRcode.getText().toString()+"Empresa:"));
+            startActivity(intent);
+        } else {
+            Toast.makeText(QRCode.this, "Verifique os erros: "+erros_qrcode, Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void voltar(View view){
         Intent abreMenuEmpresa = new Intent(this, MenuEmpresa.class);
         startActivity(abreMenuEmpresa);
+    }
+
+    public String validar_qr(){
+        String erros_qr = "";
+
+        if(txtQRcode.getText().toString().equals("")){
+            erros_qr = "Os campos marcados em vermelho estão sem informação ou incorretos.";
+            txtQRcode.setError("Esse campo é obrigatório.");
+        }
+
+        return erros_qr;
     }
 }

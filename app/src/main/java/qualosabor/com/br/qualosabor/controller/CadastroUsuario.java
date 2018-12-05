@@ -35,17 +35,38 @@ public class CadastroUsuario extends AppCompatActivity {
     public void cadastrarUsuario(View view) {
         Usuario usuario = new Usuario(txtUsuarioLogin.getText().toString(), txtSenha.getText().toString(),1);
         CadastroUsuarioDAO cadastroUsuarioDAO = new CadastroUsuarioDAO();
-        if (cadastroUsuarioDAO.insert(usuario)) {
-            Toast.makeText(this, "Usuário inserido com sucesso!", Toast.LENGTH_SHORT).show();
-            this.avancar(view);
+        String erros_criar = validarCriar();
+
+        if(erros_criar.equals("")) {
+            if (cadastroUsuarioDAO.insert(usuario)) {
+                Toast.makeText(this, "Usuário inserido com sucesso!", Toast.LENGTH_SHORT).show();
+                this.avancar(view);
+            } else {
+                Toast.makeText(this, "Erro ao inserir usuário!", Toast.LENGTH_SHORT).show();
+            }
         } else {
-            Toast.makeText(this, "Erro ao inserir usuário!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(CadastroUsuario.this, "Verifique os erros: "+erros_criar, Toast.LENGTH_SHORT).show();
         }
     }
 
     public void avancar(View view) {
         Intent abreMenuEmpresa = new Intent(this, MenuEmpresa.class);
         startActivity(abreMenuEmpresa);
+    }
+
+    public String validarCriar(){
+        String errosCriar = "";
+
+        if(txtUsuarioLogin.getText().length()<6){
+            errosCriar = "Os campos marcados em vermelho estão sem informação ou incorretos.";
+            txtUsuarioLogin.setError("Esse campo precisa de 6 caracteres.");
+        }
+        if(txtSenha.getText().length()<6){
+            errosCriar= "Os campos marcados em vermelho estão sem informação ou incorretos.";
+            txtSenha.setError("Esse campo precisa de 6 caracteres.");
+        }
+
+        return errosCriar;
     }
 
 }

@@ -93,18 +93,43 @@ public class CadastroSabor extends AppCompatActivity {
         }
     }
 
-    public void cadastrarSabor(View view){ // View V serve para ação de CLICK
+    public void cadastrarSabor(View view) { // View V serve para ação de CLICK
         Sabor sabor = new Sabor(txtNomeSabor.getText().toString(), txtIngre.getText().toString(), null, 1);
         CadastroSaborDAO cadastroSaborDAO = new CadastroSaborDAO();
-        if (cadastroSaborDAO.insert(sabor)) {
-            Toast.makeText(this, "Sabor cadastrado com sucesso!", Toast.LENGTH_SHORT).show();
-            this.voltar(view);
-        }else{
-            Toast.makeText(this, "Erro ao inserir sabor!", Toast.LENGTH_SHORT).show();
+
+        String erros_sabor = validarSabor();
+
+        if (erros_sabor.equals("")) {
+            if (cadastroSaborDAO.insert(sabor)) {
+                Toast.makeText(this, "Sabor cadastrado com sucesso!", Toast.LENGTH_SHORT).show();
+                this.voltar(view);
+            } else {
+                Toast.makeText(this, "Erro ao inserir sabor!", Toast.LENGTH_SHORT).show();
+            }
+        } else {
+            Toast.makeText(CadastroSabor.this, "Verifique os erros: "+erros_sabor, Toast.LENGTH_SHORT).show();
         }
+
     }
+
     public void voltar(View view){
         Intent abreMenuEmpresa = new Intent(this, MenuEmpresa.class);
         startActivity(abreMenuEmpresa);
     }
+
+    public String validarSabor() {
+        String errosSabor = "";
+
+        if(txtNomeSabor.getText().toString().equals("")){
+            errosSabor = "Os campos marcados em vermelho estão sem informação ou incorretos.";
+            txtNomeSabor.setError("Esse campo é obrigatório.");
+        }
+        if(txtIngre.getText().toString().equals("")){
+            errosSabor = "Os campos marcados em vermelho estão sem informação ou incorretos.";
+            txtIngre.setError("Esse campo é obrigatório.");
+        }
+
+        return errosSabor;
+    }
+
 }

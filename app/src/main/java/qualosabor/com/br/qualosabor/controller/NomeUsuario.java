@@ -50,7 +50,7 @@ public class NomeUsuario extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nome_usuario);
 
-        txtNomeCliente = (EditText) NomeUsuario.this.findViewById(R.id.txtCodNomeUsu);
+        txtNomeCliente = (   EditText) NomeUsuario.this.findViewById(R.id.txtCodNomeUsu);
 
         Intent it = getIntent();
         String mesa = it.getStringExtra("NumeroMesa");
@@ -88,11 +88,17 @@ public class NomeUsuario extends AppCompatActivity {
         Cliente cliente = new Cliente(txtNomeCliente.getText().toString(),1);
         Log.i("teste", "Cliente" + c.idEmpresa + " Inserido com sucesso!");
         CadastroClienteDAO cadastroClienteDAO = new CadastroClienteDAO();
-        if (cadastroClienteDAO.insert(cliente)) {
-            Toast.makeText(this, "Cliente cadastrado com sucesso!", Toast.LENGTH_SHORT).show();
-            this.avancar(view,txtNomeCliente.getText().toString());
-        }else{
-            Toast.makeText(this, "Erro ao cadastrar o cliente!", Toast.LENGTH_SHORT).show();
+        String erros_usuario = validarUsuario();
+
+        if (erros_usuario.equals("")) {
+            if (cadastroClienteDAO.insert(cliente)) {
+                Toast.makeText(this, "Cliente cadastrado com sucesso!", Toast.LENGTH_SHORT).show();
+                this.avancar(view, txtNomeCliente.getText().toString());
+            } else {
+                Toast.makeText(this, "Erro ao cadastrar o cliente!", Toast.LENGTH_SHORT).show();
+            }
+        } else {
+            Toast.makeText(NomeUsuario.this, "Verifique os erros: "+erros_usuario, Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -101,4 +107,16 @@ public class NomeUsuario extends AppCompatActivity {
         abreSabores.putExtra("NomeCliente", nomeCli);
         startActivity(abreSabores);
     }
+
+    public String validarUsuario(){
+        String errosUsuario = "";
+
+        if(txtNomeCliente.getText().toString().equals("")){
+            errosUsuario = "Os campos marcados em vermelho estão sem informação ou incorretos.";
+            txtNomeCliente.setError("Esse campo é obrigatório.");
+        }
+
+        return errosUsuario;
+    }
+
 }

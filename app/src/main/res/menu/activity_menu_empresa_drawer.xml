@@ -16,10 +16,6 @@
             android:id="@+id/config_empresa"
             android:icon="@drawable/ic_menu_manage"
             android:title="Configurações" />
-        <item
-            android:id="@+id/sair_menu"
-            android:icon="@drawable/ic_exit_to_app_black_24dp"
-            android:title="Sair" />
     </group>
 
 </menu>

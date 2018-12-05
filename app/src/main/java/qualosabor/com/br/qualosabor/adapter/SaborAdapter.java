@@ -36,7 +36,6 @@ public class SaborAdapter extends ArrayAdapter<Sabor>{
 
         TextView txtNomeSabor = (TextView) rowView.findViewById(R.id.txtNomeSabor);
         TextView txtIngredientes = (TextView) rowView.findViewById(R.id.txtIngre);
-        TextView txtImagemSabor = (TextView) rowView.findViewById(R.id.txtImagem);
 
         txtNomeSabor.setText(elementos.get(position).getNomeSabor());
         txtIngredientes.setText(elementos.get(position).getIngredientes());

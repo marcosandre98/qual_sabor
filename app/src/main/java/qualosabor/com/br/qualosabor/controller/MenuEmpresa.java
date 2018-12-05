@@ -64,13 +64,9 @@ public class MenuEmpresa extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.cad_sabor) {
-            Intent abreCadastrarSabores = new Intent(this, CadastroSabor.class);
-            startActivity(abreCadastrarSabores);
-        } else if (id == R.id.list_sabor) {
+        if (id == R.id.list_sabor) {
             Intent abreListarSabores = new Intent(this, ListarSabores.class);
             startActivity(abreListarSabores);
         } else if (id == R.id.config_empresa) {

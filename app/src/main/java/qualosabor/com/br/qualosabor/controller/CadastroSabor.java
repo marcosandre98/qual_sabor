@@ -6,6 +6,7 @@ import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
@@ -20,6 +21,11 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.sql.Blob;
+import java.sql.SQLException;
+
 import qualosabor.com.br.qualosabor.R;
 import qualosabor.com.br.qualosabor.dao.CadastroSaborDAO;
 import qualosabor.com.br.qualosabor.dao.CadastroUsuarioDAO;
@@ -31,6 +37,7 @@ public class CadastroSabor extends AppCompatActivity {
     private EditText txtNomeSabor;
     private EditText txtIngre;
     private ImageView imagem;
+    private Bitmap imageBitmap;
     private final int GALERIA_IMAGENS = 1;
     private  final int PERMISSAO_REQUEST = 2;
 
@@ -94,6 +101,12 @@ public class CadastroSabor extends AppCompatActivity {
     }
 
     public void cadastrarSabor(View view) { // View V serve para ação de CLICK
+
+        Bitmap bitmap = ((BitmapDrawable)imagem.getDrawable()).getBitmap();
+        ByteArrayOutputStream saida = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG,100,saida);
+        byte[] imagemBytes = saida.toByteArray();
+
         Sabor sabor = new Sabor(txtNomeSabor.getText().toString(), txtIngre.getText().toString(), null, 1);
         CadastroSaborDAO cadastroSaborDAO = new CadastroSaborDAO();
 

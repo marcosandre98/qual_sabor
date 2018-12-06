@@ -52,9 +52,13 @@ public class LoginUsuario extends AppCompatActivity {
                 Toast.makeText(this, "Você cancelou a leitura!", Toast.LENGTH_LONG).show();
             } else {
                 Toast.makeText(this, result.getContents(), Toast.LENGTH_LONG).show();
-                Intent abreNomeUsuario = new Intent(this, NomeUsuario.class);
-                abreNomeUsuario.putExtra("NumeroMesa", result.getContents().toString());
-                startActivity(abreNomeUsuario);
+                if (result.toString().contains("Empresa") && result.toString().contains("Mesa")){
+                    Intent abreNomeUsuario = new Intent(this, NomeUsuario.class);
+                    abreNomeUsuario.putExtra("NumeroMesa", result.getContents().toString());
+                    startActivity(abreNomeUsuario);
+                } else {
+                    Toast.makeText(this, "QR Code inválido", Toast.LENGTH_LONG).show();
+                }
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data);

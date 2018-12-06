@@ -14,6 +14,7 @@ import com.orm.SugarRecord;
 
 import java.util.List;
 
+import qualosabor.com.br.qualosabor.MainActivity;
 import qualosabor.com.br.qualosabor.R;
 import qualosabor.com.br.qualosabor.models.Usuario;
 
@@ -36,6 +37,12 @@ public class LoginEmpresa extends AppCompatActivity {
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Login Empresa");
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent voltaMenu = new Intent(this, MainActivity.class);
+        startActivity(voltaMenu);
     }
 
     public void abrirCadastro(View view){

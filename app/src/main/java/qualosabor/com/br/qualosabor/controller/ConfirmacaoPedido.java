@@ -24,6 +24,10 @@ public class ConfirmacaoPedido extends AppCompatActivity {
         nomeAux = cliente;
     }
 
+    @Override
+    public void onBackPressed() {
+    }
+
     public void retornar(View view){
         Intent abreSabores = new Intent(this, EscolherSabores.class);
         abreSabores.putExtra("NomeCliente", nomeAux);

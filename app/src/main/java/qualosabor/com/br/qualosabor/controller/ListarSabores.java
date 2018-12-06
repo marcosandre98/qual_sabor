@@ -33,6 +33,12 @@ public class ListarSabores extends AppCompatActivity {
         listview.setAdapter(adapter);
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent voltaMenu = new Intent(this, MenuEmpresa.class);
+        startActivity(voltaMenu);
+    }
+
     public void adicionarSabor(View view) {
         Intent abreAdicionaSabor = new Intent(this, CadastroSabor.class);
         startActivity(abreAdicionaSabor);

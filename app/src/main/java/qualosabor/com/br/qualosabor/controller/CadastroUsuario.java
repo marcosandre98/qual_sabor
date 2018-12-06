@@ -32,6 +32,10 @@ public class CadastroUsuario extends AppCompatActivity {
         btnCadastrarUsuario = (Button) findViewById(R.id.btnCadastrarUsuario);
     }
 
+    @Override
+    public void onBackPressed() {
+    }
+
     public void cadastrarUsuario(View view) {
         Usuario usuario = new Usuario(txtUsuarioLogin.getText().toString(), txtSenha.getText().toString(),1);
         CadastroUsuarioDAO cadastroUsuarioDAO = new CadastroUsuarioDAO();

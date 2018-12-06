@@ -73,6 +73,12 @@ public class CadastroSabor extends AppCompatActivity {
     }
 
     @Override
+    public void onBackPressed() {
+        Intent voltaMenu = new Intent(this, ListarSabores.class);
+        startActivity(voltaMenu);
+    }
+
+    @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK && requestCode == GALERIA_IMAGENS) {

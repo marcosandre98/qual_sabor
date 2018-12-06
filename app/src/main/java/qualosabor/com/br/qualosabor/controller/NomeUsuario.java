@@ -83,6 +83,12 @@ public class NomeUsuario extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent voltaMenu = new Intent(this, LoginUsuario.class);
+        startActivity(voltaMenu);
+    }
+
     public void cadastroCliente (View view){ // View V serve para ação de CLICK
         CadastroEmpresa c = new CadastroEmpresa();
         Cliente cliente = new Cliente(txtNomeCliente.getText().toString(),1);

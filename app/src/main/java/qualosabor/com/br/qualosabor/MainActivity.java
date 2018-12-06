@@ -32,14 +32,16 @@ public class MainActivity extends AppCompatActivity {
 
     public void mostrar(View view){
         if(!(verificaConexao())){
-            Toast.makeText(this, "Erro", Toast.LENGTH_SHORT).show();
-        }
-        if(view.equals(btnEmpresa)) {
-            Intent abreLoginEmpresa = new Intent(this, LoginEmpresa.class);
-            startActivity(abreLoginEmpresa);
-        } if(view.equals(btnUsuario)) {
-            Intent abreLoginUsuario = new Intent(this, LoginUsuario.class);
-            startActivity(abreLoginUsuario);
+            Toast.makeText(this, "Erro, você não está conectado.", Toast.LENGTH_SHORT).show();
+        }else{
+            if (view.equals(btnEmpresa)) {
+                Intent abreLoginEmpresa = new Intent(this, LoginEmpresa.class);
+                startActivity(abreLoginEmpresa);
+            }
+            if (view.equals(btnUsuario)) {
+                Intent abreLoginUsuario = new Intent(this, LoginUsuario.class);
+                startActivity(abreLoginUsuario);
+            }
         }
     }
 

@@ -1,5 +1,6 @@
 package qualosabor.com.br.qualosabor.controller;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
@@ -26,4 +27,9 @@ public class ListaSaboresMaisPedidos extends AppCompatActivity {
         listview.setAdapter(adapter);
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent voltaMenu = new Intent(this, MenuEmpresa.class);
+        startActivity(voltaMenu);
+    }
 }

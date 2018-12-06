@@ -1,5 +1,7 @@
 package qualosabor.com.br.qualosabor.controller;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -20,6 +22,7 @@ import android.view.Gravity;
 
 import java.util.List;
 
+import qualosabor.com.br.qualosabor.MainActivity;
 import qualosabor.com.br.qualosabor.R;
 import qualosabor.com.br.qualosabor.models.Pedido;
 
@@ -53,12 +56,7 @@ public class MenuEmpresa extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
+        confimarSaida();
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -76,18 +74,12 @@ public class MenuEmpresa extends AppCompatActivity
             Intent abreCadastraQRCode = new Intent(this, QRCode.class);
             startActivity(abreCadastraQRCode);
         } else if (id == R.id.sair_menu) {
-            Intent abreLoginEmpresa = new Intent(this, LoginEmpresa.class);
-            startActivity(abreLoginEmpresa);
+            confimarSaida();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }
-
-    public void listarPedidos(View view) {
-        Intent abrePedidos = new Intent(this, ListarPedidos.class);
-        startActivity(abrePedidos);
     }
 
     public void listarSaboresMaisPedidos(View view) {
@@ -99,5 +91,31 @@ public class MenuEmpresa extends AppCompatActivity
         Toast toast = Toast.makeText(this, "Pedidos Finalizados!", Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL, 0, 520);
         toast.show();
+    }
+
+    private void confimarSaida() {
+        AlertDialog alerta;
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("ALERTA");
+        builder.setMessage("Você realmente deseja sair?");
+
+        builder.setPositiveButton("Não", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface arg0, int arg1) {
+            }
+        });
+
+        builder.setNegativeButton("Sim", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface arg0, int arg1) {
+                voltarLogin();
+            }
+        });
+
+        alerta = builder.create();
+        alerta.show();
+    }
+
+    public void voltarLogin(){
+        Intent abreLoginEmpresa = new Intent(this, LoginEmpresa.class);
+        startActivity(abreLoginEmpresa);
     }
 }

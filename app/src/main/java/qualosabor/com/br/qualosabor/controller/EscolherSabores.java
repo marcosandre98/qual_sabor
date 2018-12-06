@@ -1,5 +1,7 @@
 package qualosabor.com.br.qualosabor.controller;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -42,6 +44,11 @@ public class EscolherSabores extends AppCompatActivity {
         this.buscaSabor();
     }
 
+    @Override
+    public void onBackPressed() {
+        confimarSaida();
+    }
+
     public void buscaSabor(){
 //        CadastroEmpresaDAO cadastroEmpresaDAO = new CadastroEmpresaDAO(getApplicationContext());
   //      listarSabores = cadastroEmpresaDAO.buscaEmpresas(this);
@@ -53,5 +60,31 @@ public class EscolherSabores extends AppCompatActivity {
         Intent abrePedido = new Intent(this, ConfirmacaoPedido.class);
         abrePedido.putExtra("NomeCliente", nomeAux);
         startActivity(abrePedido);
+    }
+
+    private void confimarSaida() {
+        AlertDialog alerta;
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("ALERTA");
+        builder.setMessage("Você realmente deseja sair?");
+
+        builder.setPositiveButton("Não", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface arg0, int arg1) {
+            }
+        });
+
+        builder.setNegativeButton("Sim", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface arg0, int arg1) {
+                voltarInicio();
+            }
+        });
+
+        alerta = builder.create();
+        alerta.show();
+    }
+
+    public void voltarInicio(){
+        Intent voltaLogin = new Intent(this, LoginUsuario.class);
+        startActivity(voltaLogin);
     }
 }

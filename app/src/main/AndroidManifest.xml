@@ -45,12 +45,8 @@
 
         <activity
         android:name=".controller.CadastroEmpresa"
-        android:label="Cadastrar Empresa"
-        android:parentActivityName=".controller.LoginEmpresa" />
+        android:label="Cadastrar Empresa" />
 
-
-
-        <activity android:name=".controller.ListarEmpresas" />
         <activity android:name=".MainActivity" />
         <activity
             android:name=".controller.LoginEmpresa"

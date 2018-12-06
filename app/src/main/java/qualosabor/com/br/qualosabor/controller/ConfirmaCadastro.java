@@ -25,6 +25,10 @@ public class ConfirmaCadastro extends AppCompatActivity {
 		txtCodConfirmacao = (EditText) ConfirmaCadastro.this.findViewById(R.id.txtCodConfirmacao);
     }
 
+	@Override
+	public void onBackPressed() {
+	}
+
     public void avancar(View view) {
 		if ( this.verificaCodigo(txtCodConfirmacao.getText().toString()) ) {
 			Intent abreCadastroUsuario = new Intent(this, CadastroUsuario.class);

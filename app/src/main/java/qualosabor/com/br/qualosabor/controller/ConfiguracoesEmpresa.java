@@ -1,5 +1,6 @@
 package qualosabor.com.br.qualosabor.controller;
 
+import android.content.Intent;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,6 +21,12 @@ public class ConfiguracoesEmpresa extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_configuracoes_empresa);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent voltaMenu = new Intent(this, MenuEmpresa.class);
+        startActivity(voltaMenu);
     }
 
     public void gerar(View v){

@@ -25,6 +25,12 @@ public class QRCode extends AppCompatActivity {
         txtQRcode = (EditText) QRCode.this.findViewById(R.id.txtQRcode);
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent voltaMenu = new Intent(this, MenuEmpresa.class);
+        startActivity(voltaMenu);
+    }
+
     public void gerarQRCode(View view){ // View V serve para ação de CLICK
 
         String erros_qrcode = validar_qr();

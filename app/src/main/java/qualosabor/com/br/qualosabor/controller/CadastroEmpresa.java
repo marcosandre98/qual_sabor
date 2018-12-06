@@ -1,5 +1,7 @@
 package qualosabor.com.br.qualosabor.controller;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -46,6 +48,37 @@ public class CadastroEmpresa extends AppCompatActivity {
         btnCadastrarEmpresa = (Button) findViewById(R.id.btnCadastrarEmpresa);
     }
 
+    @Override
+    public void onBackPressed() {
+        confimarSaida();
+    }
+
+    private void confimarSaida() {
+        AlertDialog alerta;
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("ALERTA");
+        builder.setMessage("Você realmente deseja cancelar o cadastro?");
+
+        builder.setPositiveButton("Não", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface arg0, int arg1) {
+            }
+        });
+
+        builder.setNegativeButton("Sim", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface arg0, int arg1) {
+                voltarInicio();
+            }
+        });
+
+        alerta = builder.create();
+        alerta.show();
+    }
+
+    public void voltarInicio(){
+        Intent voltaLogin = new Intent(this, LoginEmpresa.class);
+        startActivity(voltaLogin);
+    }
+
 //    public Empresa recuperaCampos(Empresa) {
 //        Empresa empresa = new Empresa();
 //        empresa.setRazaoSocial(txtRazaoSocial.getText().toString());
@@ -74,11 +107,6 @@ public class CadastroEmpresa extends AppCompatActivity {
         }else {
             Toast.makeText(CadastroEmpresa.this, "Verifique os erros: "+erros_totais, Toast.LENGTH_SHORT).show();
         }
-    }
-
-    public void buscaEmpresa(View view) {
-        Intent abreListaEmpresas = new Intent(this, ListarEmpresas.class);
-        startActivity(abreListaEmpresas);
     }
 
     //private void limparCampos(){

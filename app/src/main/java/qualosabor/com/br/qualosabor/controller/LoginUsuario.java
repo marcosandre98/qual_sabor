@@ -11,6 +11,7 @@ import android.widget.Toast; // Não remover, é para retornar as mensagens do l
 import com.google.zxing.integration.android.IntentIntegrator; // Não remover, é utilizado para ler o QR CODE
 import com.google.zxing.integration.android.IntentResult; // Não remover, é utilizado para ler o QR CODE
 
+import qualosabor.com.br.qualosabor.MainActivity;
 import qualosabor.com.br.qualosabor.R;
 
 public class LoginUsuario extends AppCompatActivity {
@@ -42,7 +43,13 @@ public class LoginUsuario extends AppCompatActivity {
                 integrator.initiateScan();
             }
         });
-        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent voltaMenu = new Intent(this, MainActivity.class);
+        startActivity(voltaMenu);
+    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

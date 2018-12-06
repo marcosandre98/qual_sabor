@@ -31,7 +31,7 @@ public class QRCode extends AppCompatActivity {
 
         if(erros_qrcode.equals("")) {
             Toast.makeText(this, "QR Code gerado com sucesso!", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://chart.googleapis.com/chart?chs=500x500&cht=qr&chl=Mesa:"+txtQRcode.getText().toString()+"Empresa:"));
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://chart.googleapis.com/chart?chs=500x500&cht=qr&chl=Empresa:"+1+" Mesa:"+txtQRcode.getText().toString()));
             startActivity(intent);
         } else {
             Toast.makeText(QRCode.this, "Verifique os erros: "+erros_qrcode, Toast.LENGTH_SHORT).show();

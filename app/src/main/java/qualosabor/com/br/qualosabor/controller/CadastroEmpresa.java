@@ -110,6 +110,7 @@ public class CadastroEmpresa extends AppCompatActivity {
                         @Override
                public void onFail() {
                     Toast.makeText(CadastroEmpresa.this, "Falha no envio do E-mail.", Toast.LENGTH_SHORT).show();
+
                }
             }).send();
 

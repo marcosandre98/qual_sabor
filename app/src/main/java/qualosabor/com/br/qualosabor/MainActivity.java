@@ -1,11 +1,14 @@
 package qualosabor.com.br.qualosabor;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import qualosabor.com.br.qualosabor.controller.LoginEmpresa;
 import qualosabor.com.br.qualosabor.controller.LoginUsuario;
@@ -28,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void mostrar(View view){
+        if(!(verificaConexao())){
+            Toast.makeText(this, "Erro", Toast.LENGTH_SHORT).show();
+        }
         if(view.equals(btnEmpresa)) {
             Intent abreLoginEmpresa = new Intent(this, LoginEmpresa.class);
             startActivity(abreLoginEmpresa);
@@ -35,5 +41,18 @@ public class MainActivity extends AppCompatActivity {
             Intent abreLoginUsuario = new Intent(this, LoginUsuario.class);
             startActivity(abreLoginUsuario);
         }
+    }
+
+    public  boolean verificaConexao() {
+        boolean conectado;
+        ConnectivityManager conectivtyManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (conectivtyManager.getActiveNetworkInfo() != null
+                && conectivtyManager.getActiveNetworkInfo().isAvailable()
+                && conectivtyManager.getActiveNetworkInfo().isConnected()) {
+            conectado = true;
+        } else {
+            conectado = false;
+        }
+        return conectado;
     }
 }

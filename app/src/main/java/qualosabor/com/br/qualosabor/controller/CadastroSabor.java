@@ -132,8 +132,8 @@ public class CadastroSabor extends AppCompatActivity {
     }
 
     public void voltar(View view){
-        Intent abreMenuEmpresa = new Intent(this, MenuEmpresa.class);
-        startActivity(abreMenuEmpresa);
+        Intent abreSabores = new Intent(this, ListarSabores.class);
+        startActivity(abreSabores);
     }
 
     public String validarSabor() {

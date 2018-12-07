@@ -88,7 +88,7 @@ public class MenuEmpresa extends AppCompatActivity
     }
 
     public void confirmarPedido(View view){
-        Toast toast = Toast.makeText(this, "Pedidos Finalizados!", Toast.LENGTH_SHORT);
+        Toast toast = Toast.makeText(this, "Pedidos Finalizados", Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL, 0, 520);
         toast.show();
     }

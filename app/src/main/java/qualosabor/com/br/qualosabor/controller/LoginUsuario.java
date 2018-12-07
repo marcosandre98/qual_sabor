@@ -56,9 +56,9 @@ public class LoginUsuario extends AppCompatActivity {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         if(result != null){
             if(result.getContents()== null){
-                Toast.makeText(this, "Você cancelou a leitura!", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Leitura cancelada", Toast.LENGTH_LONG).show();
             } else {
-                Toast.makeText(this, result.getContents(), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "QR Code escaneado com sucesso", Toast.LENGTH_LONG).show();
                 if (result.toString().contains("Empresa") && result.toString().contains("Mesa")){
                     Intent abreNomeUsuario = new Intent(this, NomeUsuario.class);
                     String frutas[] = result.getContents().split(":");

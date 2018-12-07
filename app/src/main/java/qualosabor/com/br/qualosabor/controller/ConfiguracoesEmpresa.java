@@ -48,7 +48,7 @@ public class ConfiguracoesEmpresa extends AppCompatActivity {
                 src.close();
                 dst.close();
                 Log.i("carollo", "Realizado com sucesso");
-                Toast.makeText(this, "Backup realizado com sucesso!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Backup realizado com sucesso", Toast.LENGTH_SHORT).show();
             }
         } catch (Exception e) {
             Log.i("carollo","Erro ao exportar : " + e.getMessage() );

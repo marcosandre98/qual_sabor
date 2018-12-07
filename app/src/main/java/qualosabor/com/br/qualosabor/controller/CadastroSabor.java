@@ -120,10 +120,10 @@ public class CadastroSabor extends AppCompatActivity {
 
         if (erros_sabor.equals("")) {
             if (cadastroSaborDAO.insert(sabor)) {
-                Toast.makeText(this, "Sabor cadastrado com sucesso!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Sabor cadastrado com sucesso", Toast.LENGTH_SHORT).show();
                 this.voltar(view);
             } else {
-                Toast.makeText(this, "Erro ao inserir sabor!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Erro ao inserir sabor", Toast.LENGTH_SHORT).show();
             }
         } else {
             Toast.makeText(CadastroSabor.this, "Verifique os erros: "+erros_sabor, Toast.LENGTH_SHORT).show();
@@ -140,12 +140,12 @@ public class CadastroSabor extends AppCompatActivity {
         String errosSabor = "";
 
         if(txtNomeSabor.getText().toString().equals("")){
-            errosSabor = "Os campos marcados em vermelho estão sem informação ou incorretos.";
-            txtNomeSabor.setError("Esse campo é obrigatório.");
+            errosSabor = "Os campos marcados em vermelho estão sem informação ou incorretos";
+            txtNomeSabor.setError("Esse campo é obrigatório");
         }
         if(txtIngre.getText().toString().equals("")){
-            errosSabor = "Os campos marcados em vermelho estão sem informação ou incorretos.";
-            txtIngre.setError("Esse campo é obrigatório.");
+            errosSabor = "Os campos marcados em vermelho estão sem informação ou incorretos";
+            txtIngre.setError("Esse campo é obrigatório");
         }
 
         return errosSabor;

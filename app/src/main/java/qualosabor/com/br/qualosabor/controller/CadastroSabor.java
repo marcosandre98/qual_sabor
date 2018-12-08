@@ -113,7 +113,7 @@ public class CadastroSabor extends AppCompatActivity {
         bitmap.compress(Bitmap.CompressFormat.PNG,100,saida);
         byte[] imagemBytes = saida.toByteArray();
 
-        Sabor sabor = new Sabor(txtNomeSabor.getText().toString(), txtIngre.getText().toString(), null, 1);
+        Sabor sabor = new Sabor(txtNomeSabor.getText().toString(), txtIngre.getText().toString(), imagemBytes, 1);
         CadastroSaborDAO cadastroSaborDAO = new CadastroSaborDAO();
 
         String erros_sabor = validarSabor();

@@ -8,11 +8,11 @@ public class Sabor extends SugarRecord {
 
     private String nomeSabor;
     private String ingredientes;
-    private Blob imagem;
+    private byte[] imagem;
     private Integer idEmpresa;
 
 
-    public Sabor(String nomeSabor, String ingredientes, Blob imagem, Integer idEmpresa) {
+    public Sabor(String nomeSabor, String ingredientes, byte[] imagem, Integer idEmpresa) {
         this.nomeSabor = nomeSabor;
         this.ingredientes = ingredientes;
         this.imagem = imagem;
@@ -40,11 +40,11 @@ public class Sabor extends SugarRecord {
         this.ingredientes = ingredientes;
     }
 
-    public Blob getImagem() {
+    public byte[] getImagem() {
         return imagem;
     }
 
-    public void setImagem(Blob imagem) {
+    public void setImagem(byte[] imagem) {
         this.imagem = imagem;
     }
 

@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -26,11 +27,22 @@ public class ListarSabores extends AppCompatActivity {
 
         ListView listview = (ListView) findViewById(R.id.listSaboresCadastrados);
 
-        List<Sabor> sabores = Sabor.listAll(Sabor.class);
+//        ArrayAdapter<Sabor> adapter = new ArrayAdapter<Sabor>(this, android.R.layout.simple_list_item_1, adiconaSabor());
 
+        List<Sabor> sabores = Sabor.listAll(Sabor.class);
+//        ArrayAdapter adapter = new SaborAdapter(this, sabores);
         ArrayAdapter<Sabor> adapter;
         adapter = new ArrayAdapter<Sabor>(this, android.R.layout.simple_list_item_1, sabores);
         listview.setAdapter(adapter);
+    }
+
+    private ArrayList<Sabor> adiconaSabor() {
+        ArrayList<Sabor> sabores = new ArrayList<>();
+        Sabor s = new Sabor("Calabreza", "calabreza, queijo, oregano", null, 1);
+        sabores.add(s);
+        Sabor s1 = new Sabor("ASDDSSSS", "calabreza, queijo, oregano", null, 1);
+        sabores.add(s1);
+        return sabores;
     }
 
     @Override

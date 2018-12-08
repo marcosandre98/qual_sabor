@@ -7,8 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,28 +20,27 @@ import qualosabor.com.br.qualosabor.models.Sabor;
 
 public class SaborAdapter extends ArrayAdapter<Sabor>{
 
-    private Context context;
-    private List<Sabor> elementos;
+    private final Context context;
+    private final ArrayList<Sabor> elementos;
 
-    public SaborAdapter(@NonNull Context context, List<Sabor> elementos) {
+    public SaborAdapter(Context context, ArrayList<Sabor> elementos) {
         super(context, R.layout.linha_lista_sabor, elementos);
         this.context = context;
         this.elementos = elementos;
-
     }
 
-    @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+    public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rowView = inflater.inflate(R.layout.linha_lista_sabor, parent, false);
 
-        TextView txtNomeSabor = (TextView) rowView.findViewById(R.id.txtNomeSabor);
-        TextView txtIngredientes = (TextView) rowView.findViewById(R.id.txtIngre);
+        TextView txtNomeSabor = (TextView) rowView.findViewById(R.id.txtSaborLista);
+        TextView txtIngredientes = (TextView) rowView.findViewById(R.id.txtIngredientesLista);
+        ImageView imagemSabor = (ImageView) rowView.findViewById(R.id.imagemPizza);
 
         txtNomeSabor.setText(elementos.get(position).getNomeSabor());
         txtIngredientes.setText(elementos.get(position).getIngredientes());
-//        txtImagemSabor.setText(elementos.get(position).getImagem());
+//        imagemSabor.setImageResource(elementos.get(position).getImagem());
 
         return rowView;
     }

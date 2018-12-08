@@ -56,12 +56,14 @@ public class LoginUsuario extends AppCompatActivity {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         if(result != null){
             if(result.getContents()== null){
-                Toast.makeText(this, "Você cancelou a leitura!", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Leitura cancelada", Toast.LENGTH_LONG).show();
             } else {
-                Toast.makeText(this, result.getContents(), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "QR Code escaneado com sucesso", Toast.LENGTH_LONG).show();
                 if (result.toString().contains("Empresa") && result.toString().contains("Mesa")){
                     Intent abreNomeUsuario = new Intent(this, NomeUsuario.class);
-                    abreNomeUsuario.putExtra("NumeroMesa", result.getContents().toString());
+                    String frutas[] = result.getContents().split(":");
+                    abreNomeUsuario.putExtra("NumeroEmpresa", frutas[1]);
+                    abreNomeUsuario.putExtra("NumeroMesa", frutas[3]);
                     startActivity(abreNomeUsuario);
                 } else {
                     Toast.makeText(this, "QR Code inválido", Toast.LENGTH_LONG).show();

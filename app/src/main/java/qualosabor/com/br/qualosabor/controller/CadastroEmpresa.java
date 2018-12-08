@@ -99,7 +99,7 @@ public class CadastroEmpresa extends AppCompatActivity {
         if(erros_totais.equals("")) {
             CadastroEmpresaDAO cadastroEmpresaDAO = new CadastroEmpresaDAO();
             if (cadastroEmpresaDAO.insert(empresa)) {
-                Toast.makeText(this, "Empresa inserida com sucesso.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Empresa cadastrada com sucesso", Toast.LENGTH_SHORT).show();
                 this.idEmpresa = empresa.getId();
                 this.avancar(view);
                 this.enviaEmail(txtEmail.getText().toString()); //txtEmail.getText().toString()
@@ -132,18 +132,18 @@ public class CadastroEmpresa extends AppCompatActivity {
             .withSubject("Confirmação de Cadastro").withBody("Código de confirmação: "+number).withOnSuccessCallback(new BackgroundMail.OnSuccessCallback() {
                 @Override
                 public void onSuccess() {
-                    Toast.makeText(CadastroEmpresa.this, "E-mail enviado com sucesso.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CadastroEmpresa.this, "E-mail enviado com sucesso", Toast.LENGTH_SHORT).show();
                 }
             }).withOnFailCallback(new BackgroundMail.OnFailCallback() {
                         @Override
                public void onFail() {
-                    Toast.makeText(CadastroEmpresa.this, "Falha no envio do E-mail.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CadastroEmpresa.this, "Falha no envio do E-mail", Toast.LENGTH_SHORT).show();
 
                }
             }).send();
 
         } else {
-            Toast.makeText(this,"Erro ao gerar seu código de verificação, por favor entre em contato com o suporte!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"Erro ao gerar seu código de verificação, por favor entre em contato com o suporte", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -151,32 +151,32 @@ public class CadastroEmpresa extends AppCompatActivity {
         String erros = "";
 
         if(txtRazaoSocial.getText().toString().equals("")){
-            erros = "Os campos marcados em vermelho estão sem informação ou incorretos.";
-            txtRazaoSocial.setError("Esse campo é obrigatório.");
+            erros = "Os campos marcados em vermelho estão sem informação ou incorretos";
+            txtRazaoSocial.setError("Esse campo é obrigatório");
         }
         if(txtNomeFantasia.getText().toString().equals("")){
-            erros = "Os campos marcados em vermelho estão sem informação ou incorretos.";
-            txtNomeFantasia.setError("Esse campo é obrigatório.");
+            erros = "Os campos marcados em vermelho estão sem informação ou incorretos";
+            txtNomeFantasia.setError("Esse campo é obrigatório");
         }
         if(txtCnpj.getText().toString().equals("")){
-            erros = "Os campos marcados em vermelho estão sem informação ou incorretos.";
-            txtCnpj.setError("Esse campo é obrigatório.");
+            erros = "Os campos marcados em vermelho estão sem informação ou incorretos";
+            txtCnpj.setError("Esse campo é obrigatório");
         }
         if(txtCep.getText().toString().equals("")){
-            erros = "Os campos marcados em vermelho estão sem informação ou incorretos.";
-            txtCep.setError("Esse campo é obrigatório.");
+            erros = "Os campos marcados em vermelho estão sem informação ou incorretos";
+            txtCep.setError("Esse campo é obrigatório");
         }
         if(txtUf.getText().toString().equals("")){
-            erros = "Os campos marcados em vermelho estão sem informação ou incorretos.";
-            txtUf.setError("Esse campo é obrigatório.");
+            erros = "Os campos marcados em vermelho estão sem informação ou incorretos";
+            txtUf.setError("Esse campo é obrigatório");
         }
         if(txtMunicipio.getText().toString().equals("")){
-            erros = "Os campos marcados em vermelho estão sem informação ou incorretos.";
-            txtMunicipio.setError("Esse campo é obrigatório.");
+            erros = "Os campos marcados em vermelho estão sem informação ou incorretos";
+            txtMunicipio.setError("Esse campo é obrigatório");
         }
         if(!txtEmail.getText().toString().contains("@")){
-            erros = "Os campos marcados em vermelho estão sem informação ou incorretos.";
-            txtEmail.setError("E-mail inválido.");
+            erros = "Os campos marcados em vermelho estão sem informação ou incorretos";
+            txtEmail.setError("E-mail inválido");
         }
 
         return erros;

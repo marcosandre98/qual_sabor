@@ -34,7 +34,7 @@ public class ConfirmaCadastro extends AppCompatActivity {
 			Intent abreCadastroUsuario = new Intent(this, CadastroUsuario.class);
 			startActivity(abreCadastroUsuario);
 		} else {
-			Toast.makeText(this,"Código de verificação da empresa está incorreto! Tente novamente!", Toast.LENGTH_SHORT).show();
+			Toast.makeText(this,"Código de verificação da empresa está incorreto! Tente novamente", Toast.LENGTH_SHORT).show();
 		}
     }
 	

@@ -43,10 +43,10 @@ public class CadastroUsuario extends AppCompatActivity {
 
         if(erros_criar.equals("")) {
             if (cadastroUsuarioDAO.insert(usuario)) {
-                Toast.makeText(this, "Usuário inserido com sucesso!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Usuário inserido com sucesso", Toast.LENGTH_SHORT).show();
                 this.avancar(view);
             } else {
-                Toast.makeText(this, "Erro ao inserir usuário!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Erro ao inserir usuário", Toast.LENGTH_SHORT).show();
             }
         } else {
             Toast.makeText(CadastroUsuario.this, "Verifique os erros: "+erros_criar, Toast.LENGTH_SHORT).show();
@@ -62,12 +62,12 @@ public class CadastroUsuario extends AppCompatActivity {
         String errosCriar = "";
 
         if(txtUsuarioLogin.getText().length()<6){
-            errosCriar = "Os campos marcados em vermelho estão sem informação ou incorretos.";
-            txtUsuarioLogin.setError("Esse campo precisa de 6 caracteres.");
+            errosCriar = "Os campos marcados em vermelho estão sem informação ou incorretos";
+            txtUsuarioLogin.setError("Esse campo precisa de 6 caracteres");
         }
         if(txtSenha.getText().length()<6){
-            errosCriar= "Os campos marcados em vermelho estão sem informação ou incorretos.";
-            txtSenha.setError("Esse campo precisa de 6 caracteres.");
+            errosCriar= "Os campos marcados em vermelho estão sem informação ou incorretos";
+            txtSenha.setError("Esse campo precisa de 6 caracteres");
         }
 
         return errosCriar;

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".controller.CadastroSabor">
+    tools:context=".controller.CadastroSabor"
+    >
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/lblNomeSabor"
@@ -25,6 +26,7 @@
             android:layout_height="wrap_content"
             android:hint="Nome do sabor"
             android:inputType="text" />
+
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
@@ -44,17 +46,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Ingredientes" />
+
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/lblImagem"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_height="13dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblIngre">
 
@@ -64,47 +65,48 @@
         android:id="@+id/btnPedidoConfir"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:layout_marginStart="148dp"
-        android:layout_marginLeft="148dp"
-        android:layout_marginEnd="148dp"
-        android:layout_marginRight="148dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         android:background="@drawable/button_background_orange"
         android:onClick="cadastrarSabor"
         android:text="Cadastrar Sabor"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/ivImagemSabor" />
 
-    <ImageView
+
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/ivImagemSabor"
         android:layout_width="302dp"
         android:layout_height="198dp"
+        android:layout_alignParentTop="true"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
+        app:civ_border_color="#FFFFFF"
+        app:civ_border_width="2dp"
         app:layout_constraintBottom_toTopOf="@+id/btnPedidoConfir"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnGaleria"
-        app:srcCompat="@drawable/pizzanova" />
+        app:layout_constraintTop_toBottomOf="@+id/lblIngre"
+        app:srcCompat="@drawable/pizza" />
 
     <Button
         android:id="@+id/btnGaleria"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="80dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="145dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="Selecionar Imagem"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/camera"
+        app:layout_constraintHorizontal_bias="0.544"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblImagem" />
 
 </android.support.constraint.ConstraintLayout>

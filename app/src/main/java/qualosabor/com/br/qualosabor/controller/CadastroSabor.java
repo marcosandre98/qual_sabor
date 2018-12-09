@@ -26,6 +26,7 @@ import java.io.ByteArrayOutputStream;
 import java.sql.Blob;
 import java.sql.SQLException;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import qualosabor.com.br.qualosabor.R;
 import qualosabor.com.br.qualosabor.dao.CadastroSaborDAO;
 import qualosabor.com.br.qualosabor.dao.CadastroUsuarioDAO;
@@ -58,7 +59,7 @@ public class CadastroSabor extends AppCompatActivity {
             }
         }
 
-        imagem = (ImageView) findViewById(R.id.ivImagemSabor);
+        imagem = (CircleImageView) findViewById(R.id.ivImagemSabor);
         Button galeria = (Button) findViewById(R.id.btnGaleria);
         galeria.setOnClickListener(new View.OnClickListener() {
             @Override

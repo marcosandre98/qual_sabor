@@ -27,10 +27,10 @@
 
     <ListView
         android:id="@+id/listSaboresCadastrados"
-        android:layout_width="370dp"
-        android:layout_height="500dp"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="20dp" />
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
 
 </android.support.constraint.ConstraintLayout>

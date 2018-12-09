@@ -39,6 +39,7 @@ public class NomeUsuario extends AppCompatActivity {
     CallbackManager callbackManager;
     private EditText txtNomeCliente;
     private Button login_button;
+    String mesa = "";
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -54,7 +55,7 @@ public class NomeUsuario extends AppCompatActivity {
         txtNomeCliente = (   EditText) NomeUsuario.this.findViewById(R.id.txtCodNomeUsu);
 
         Intent it = getIntent();
-        String mesa = it.getStringExtra("NumeroMesa");
+        mesa = it.getStringExtra("NumeroMesa");
         TextView label = findViewById(R.id.txtNomeUsu);
         label.setText("Código scaneado com sucesso na Mesa "+mesa+"! Por favor, insira seu nome:");
         callbackManager = CallbackManager.Factory.create();
@@ -91,17 +92,17 @@ public class NomeUsuario extends AppCompatActivity {
     }
 
     public void cadastroCliente (View view){ // View V serve para ação de CLICK
-        CadastroEmpresa c = new CadastroEmpresa();
         Cliente cliente = new Cliente(txtNomeCliente.getText().toString(),1);
         CadastroClienteDAO cadastroClienteDAO = new CadastroClienteDAO();
-        String erros_usuario = validarUsuario();
 
+        String erros_usuario = validarUsuario();
         if (erros_usuario.equals("")) {
-            if (cadastroClienteDAO.insert(cliente)) {
+            int idCliente = cadastroClienteDAO.insert(cliente);
+            if (idCliente != 0) {
                 Toast toast = Toast.makeText(this, "Cliente cadastrado com sucesso", Toast.LENGTH_SHORT);
                 toast.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL, 0, 520);
                 toast.show();
-                this.avancar(view, txtNomeCliente.getText().toString());
+                this.avancar(view, String.valueOf(idCliente), txtNomeCliente.getText().toString());
             } else {
                 Toast.makeText(this, "Erro ao cadastrar o cliente", Toast.LENGTH_SHORT).show();
             }
@@ -110,8 +111,10 @@ public class NomeUsuario extends AppCompatActivity {
         }
     }
 
-    public void avancar(View view, String nomeCli){
+    public void avancar(View view, String idCliente, String nomeCli){
         Intent abreSabores = new Intent(this, EscolherSabores.class);
+        abreSabores.putExtra("numeroMesa", mesa);
+        abreSabores.putExtra("idCliente", idCliente);
         abreSabores.putExtra("NomeCliente", nomeCli);
         startActivity(abreSabores);
     }

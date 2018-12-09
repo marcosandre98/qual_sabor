@@ -72,7 +72,7 @@
         -->
         <activity
             android:name=".controller.ListarSabores"
-            android:label="Lista de Sabores"
+            android:label="Sabores"
             android:parentActivityName=".controller.MenuEmpresa"/>
         <activity
             android:name=".controller.ConfirmaCadastro"
@@ -94,7 +94,7 @@
             android:parentActivityName=".controller.MenuEmpresa"/>
         <activity
             android:name=".controller.MenuEmpresa"
-            android:label="@string/title_activity_menu_empresa"
+            android:label="Pedidos"
             android:theme="@style/AppTheme.NoActionBar"
             tools:ignore="DuplicateActivity" />
 

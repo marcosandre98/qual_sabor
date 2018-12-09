@@ -20,11 +20,15 @@ import android.widget.ListView;
 import android.widget.Toast;
 import android.view.Gravity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import qualosabor.com.br.qualosabor.MainActivity;
 import qualosabor.com.br.qualosabor.R;
+import qualosabor.com.br.qualosabor.adapter.PedidoAdapter;
+import qualosabor.com.br.qualosabor.adapter.SaborAdapter;
 import qualosabor.com.br.qualosabor.models.Pedido;
+import qualosabor.com.br.qualosabor.models.Sabor;
 
 public class MenuEmpresa extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -44,14 +48,23 @@ public class MenuEmpresa extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-
-        ListView listview = (ListView) findViewById(R.id.listaSabores);
-
+        ListView listview = (ListView) findViewById(R.id.listaPedidosEmpresa);
         List<Pedido> pedidos = Pedido.listAll(Pedido.class);
-
-        ArrayAdapter<Pedido> adapter;
-        adapter = new ArrayAdapter<Pedido>(this, android.R.layout.simple_list_item_1, pedidos);
+        ArrayAdapter adapter = new PedidoAdapter(this, this.arrayListPedidos(pedidos));
         listview.setAdapter(adapter);
+//
+//        ListView listview = (ListView) findViewById(R.id.listaSabores);
+//
+//        List<Pedido> pedidos = Pedido.listAll(Pedido.class);
+//
+//        ArrayAdapter<Pedido> adapter;
+//        adapter = new ArrayAdapter<Pedido>(this, android.R.layout.simple_list_item_1, pedidos);
+//        listview.setAdapter(adapter);
+    }
+
+    private ArrayList<Pedido> arrayListPedidos(List listPedidos) {
+        ArrayList<Pedido> arrayPedidos = new ArrayList<Pedido>(listPedidos);
+        return arrayPedidos;
     }
 
     @Override

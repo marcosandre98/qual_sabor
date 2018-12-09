@@ -7,14 +7,14 @@ import qualosabor.com.br.qualosabor.models.Sabor;
 
 public class CadastroClienteDAO {
 
-    public Boolean insert(Cliente cliente) {
+    public int insert(Cliente cliente) {
         try {
             cliente.save();
             Log.i("teste", "Cliente" + cliente.getId() + " Inserido com sucesso!");
-            return true;
+            return (int) (long) cliente.getId();
         } catch(Exception erro) {
             Log.e("teste", "Erro " + erro.getMessage());
-            return false;
+            return 0;
         }
 
     }

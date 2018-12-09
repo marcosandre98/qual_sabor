@@ -1,6 +1,10 @@
 package qualosabor.com.br.qualosabor.models;
 
 import com.orm.SugarRecord;
+import com.orm.dsl.Ignore;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Pedido extends SugarRecord {
 
@@ -9,6 +13,10 @@ public class Pedido extends SugarRecord {
     private Integer idCliente;
     private Integer idEmpresa;
     private Integer situacaoPedido;
+
+    @Ignore
+    private Sabor sabor;
+    private Cliente cliente;
 
 
     public Pedido(Integer numeroMesa, Integer idSabor, Integer idCliente, Integer idEmpresa, Integer situacaoPedido) {
@@ -63,6 +71,22 @@ public class Pedido extends SugarRecord {
         this.situacaoPedido = situacaoPedido;
     }
 
+    public Sabor getSabor() {
+        return sabor;
+    }
+
+    public void setSabor(Sabor sabor) {
+        this.sabor = sabor;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
     @Override
     public String toString() {
 
@@ -71,5 +95,7 @@ public class Pedido extends SugarRecord {
                 + "; Cliente: " + this.idCliente
                 + "; Situação: " + this.situacaoPedido;
     }
+
+
 
 }

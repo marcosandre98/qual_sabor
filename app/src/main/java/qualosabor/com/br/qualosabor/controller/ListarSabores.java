@@ -26,23 +26,14 @@ public class ListarSabores extends AppCompatActivity {
         setContentView(R.layout.activity_listar_sabores);
 
         ListView listview = (ListView) findViewById(R.id.listSaboresCadastrados);
-
-//        ArrayAdapter<Sabor> adapter = new ArrayAdapter<Sabor>(this, android.R.layout.simple_list_item_1, adiconaSabor());
-
         List<Sabor> sabores = Sabor.listAll(Sabor.class);
-//        ArrayAdapter adapter = new SaborAdapter(this, sabores);
-        ArrayAdapter<Sabor> adapter;
-        adapter = new ArrayAdapter<Sabor>(this, android.R.layout.simple_list_item_1, sabores);
+        ArrayAdapter adapter = new SaborAdapter(this, this.arrayListSabor(sabores));
         listview.setAdapter(adapter);
     }
 
-    private ArrayList<Sabor> adiconaSabor() {
-        ArrayList<Sabor> sabores = new ArrayList<>();
-        Sabor s = new Sabor("Calabreza", "calabreza, queijo, oregano", null, 1);
-        sabores.add(s);
-        Sabor s1 = new Sabor("ASDDSSSS", "calabreza, queijo, oregano", null, 1);
-        sabores.add(s1);
-        return sabores;
+    private ArrayList<Sabor> arrayListSabor(List listSabores) {
+        ArrayList<Sabor> arraySabores = new ArrayList<Sabor>(listSabores);
+        return arraySabores;
     }
 
     @Override

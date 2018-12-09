@@ -39,7 +39,7 @@ public class PedidoAdapter extends ArrayAdapter<Pedido>{
         Sabor sabor = Sabor.findById(Sabor.class, Long.valueOf(elementos.get(position).getIdSabor()));
 
         txtMesa.setText("Mesa: " + elementos.get(position).getNumeroMesa().toString());
-        txtNomeSabor.setText("Sabor: " + sabor.getNomeSabor());
+        //txtNomeSabor.setText("Sabor: " + sabor.getNomeSabor());
         txtNomeCliente.setText("Cliente: " + cliente.getNomeCliente());
 
         return rowView;

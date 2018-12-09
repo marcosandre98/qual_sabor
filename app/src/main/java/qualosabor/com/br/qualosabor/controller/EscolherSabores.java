@@ -74,10 +74,9 @@ public class EscolherSabores extends AppCompatActivity {
         Pedido pedido = new Pedido(Integer.parseInt(mesa), 8, Integer.parseInt(idCliente), 1, 1);
         CadastroPedidoDAO cadastroPedidoDAO = new CadastroPedidoDAO();
         if (cadastroPedidoDAO.insert(pedido)) {
-            Intent abrePedido = new Intent(this, ConfirmacaoPedido.class);
-            abrePedido.putExtra("NomeCliente", nomeAux);
-            startActivity(abrePedido);
-            Toast.makeText(this, "Pedido enviado com sucesso", Toast.LENGTH_SHORT).show();
+            Toast toast = Toast.makeText(this, "Pedido enviado com sucesso", Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL, 0, 520);
+            toast.show();
         } else {
             Toast.makeText(this, "Erro ao fazer o pedido! Tente novamente!", Toast.LENGTH_SHORT).show();
         }

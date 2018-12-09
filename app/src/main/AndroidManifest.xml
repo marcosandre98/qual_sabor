@@ -63,9 +63,6 @@
         <activity
             android:name=".controller.EscolherSabores"
             android:label="Escolher Sabores" />
-        <activity
-            android:name=".controller.ConfirmacaoPedido"
-            android:label="" />
         <!--
        <activity android:name=".controller.MenuEmpresa" /> ->>
        <!- <activity android:name=".CadastrarSabores" />

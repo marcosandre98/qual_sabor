@@ -31,7 +31,7 @@ public class QRCode extends AppCompatActivity {
         startActivity(voltaMenu);
     }
 
-    public void gerarQRCode(View view){ // View V serve para ação de CLICK
+    public void gerarQRCode(View view){
 
         String erros_qrcode = validar_qr();
 

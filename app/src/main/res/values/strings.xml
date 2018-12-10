@@ -35,4 +35,11 @@
     <string name="facebook_app_id">2214108191935259</string>
     <string name="fb_login_protocol_scheme">fb2214108191935259</string>
     <string name="title_activity_add_qrcode">add_qrcode</string>
+    <string name="excluir">Excluir</string>
+    <string name="alterar">Alterar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="opcoes">Opções</string>
+    <string name="confExcluir">Deseja realmente Excluir?</string>
+    <string name="sim">Sim</string>
+    <string name="nao">Não</string>
 </resources>

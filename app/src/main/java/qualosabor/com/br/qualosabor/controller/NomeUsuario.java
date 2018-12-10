@@ -2,9 +2,13 @@ package qualosabor.com.br.qualosabor.controller;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.Signature;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Base64;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -19,12 +23,15 @@ import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
+import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 
 import org.json.JSONObject;
 import org.w3c.dom.Text;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 
 import qualosabor.com.br.qualosabor.R;
@@ -38,18 +45,13 @@ public class NomeUsuario extends AppCompatActivity {
 
     CallbackManager callbackManager;
     private EditText txtNomeCliente;
-    private Button login_button;
     String mesa = "";
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        callbackManager.onActivityResult(requestCode, resultCode, data);
-    }
+    private LoginButton login_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_nome_usuario);
 
         txtNomeCliente = (   EditText) NomeUsuario.this.findViewById(R.id.txtCodNomeUsu);
@@ -58,12 +60,11 @@ public class NomeUsuario extends AppCompatActivity {
         mesa = it.getStringExtra("NumeroMesa");
         TextView label = findViewById(R.id.txtNomeUsu);
         label.setText("Código scaneado com sucesso na Mesa "+mesa+"! Por favor, insira seu nome:");
+
         callbackManager = CallbackManager.Factory.create();
 
         LoginButton loginButton = (LoginButton)findViewById(R.id.login_button);
-        //loginButton.setFragment(this);
-
-        callbackManager = CallbackManager.Factory.create();
+        loginButton.setReadPermissions("email");
 
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
@@ -78,11 +79,32 @@ public class NomeUsuario extends AppCompatActivity {
             @Override
             public void onError(FacebookException error) {
             }
-
-            AccessToken accessToken = AccessToken.getCurrentAccessToken();
-            boolean isLoggedIn = accessToken != null && !accessToken.isExpired();
-
         });
+
+        callbackManager = CallbackManager.Factory.create();
+
+        LoginManager.getInstance().registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+            @Override
+            public void onSuccess(LoginResult loginResult) {
+
+            }
+
+            @Override
+            public void onCancel() {
+
+            }
+
+            @Override
+            public void onError(FacebookException error) {
+
+            }
+        });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        callbackManager.onActivityResult(requestCode, resultCode, data);
     }
 
     @Override

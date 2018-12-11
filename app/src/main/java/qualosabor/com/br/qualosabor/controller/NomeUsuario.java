@@ -23,6 +23,8 @@ import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
+import com.facebook.HttpMethod;
+import com.facebook.Profile;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
@@ -64,7 +66,22 @@ public class NomeUsuario extends AppCompatActivity {
         callbackManager = CallbackManager.Factory.create();
 
         LoginButton loginButton = (LoginButton)findViewById(R.id.login_button);
-        loginButton.setReadPermissions("email");
+        loginButton.setReadPermissions("email", "public_profile"); //, "user_friends"
+
+        try {
+            PackageInfo info = getPackageManager().getPackageInfo(
+                    "qualosabor.com.br.qualosabor",
+                    PackageManager.GET_SIGNATURES);
+            for (Signature signature : info.signatures) {
+                MessageDigest md = MessageDigest.getInstance("SHA");
+                md.update(signature.toByteArray());
+                Log.d("KeyHash:", Base64.encodeToString(md.digest(), Base64.DEFAULT));
+            }
+        } catch (PackageManager.NameNotFoundException e) {
+
+        } catch (NoSuchAlgorithmException e) {
+
+        }
 
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
@@ -73,7 +90,6 @@ public class NomeUsuario extends AppCompatActivity {
 
             @Override
             public void onCancel() {
-                // App code
             }
 
             @Override
@@ -86,7 +102,8 @@ public class NomeUsuario extends AppCompatActivity {
         LoginManager.getInstance().registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
-
+                Toast.makeText(getApplicationContext(),  "Logado com sucesso", Toast.LENGTH_SHORT).show();
+                executeGraphRequest(loginResult.getAccessToken().getUserId());
             }
 
             @Override
@@ -96,9 +113,24 @@ public class NomeUsuario extends AppCompatActivity {
 
             @Override
             public void onError(FacebookException error) {
-
+                Toast.makeText(getApplicationContext(),  error.toString(), Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    private void executeGraphRequest(final String userId){
+        GraphRequest request =new GraphRequest(AccessToken.getCurrentAccessToken(), userId, null, HttpMethod.GET, new GraphRequest.Callback() {
+            @Override
+            public void onCompleted(GraphResponse response) {
+                Log.i("FACEBOOK", response.getJSONObject().toString());
+                Log.i("FACEBOOK", Profile.getCurrentProfile().toString());
+            }
+        });
+
+        Bundle parameters = new Bundle();
+        parameters.putString("fields", "name");
+        request.setParameters(parameters);
+        request.executeAsync();
     }
 
     @Override
